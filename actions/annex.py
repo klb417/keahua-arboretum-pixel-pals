@@ -2,10 +2,10 @@ import os
 # from environments import River
 from arboretum import Arboretum
 
-# csl = clear screen
-def annex_habitat(arboretum):
-    os.system('cls' if os.name == 'nt' else 'clear')
-    print("1. Mountain")
+
+def annex_biome(arboretum):
+    os.system("cls" if os.name == "nt" else "clear")
+    print("1. River")
     print("2. Swamp")
     print("3. Grassland")
     print("4. Forest")
