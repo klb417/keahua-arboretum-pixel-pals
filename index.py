@@ -4,7 +4,7 @@ from uuid import uuid1
 
 from arboretum import Arboretum
 from actions import (
-    annex_habitat,
+    annex_biome,
     release_animal,
     build_facility_report,
     cultivate_plant,
@@ -33,7 +33,7 @@ def main_menu():
     choice = input(">> ")
 
     if choice == "1":
-        annex_habitat(keahua)
+        annex_biome(keahua)
 
 
     if choice == "2":
