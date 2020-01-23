@@ -1,19 +1,16 @@
 class Plant:
 
-    def __init__(self):
-        self.__species = ''
+    def __init__(self, species, sunlight, seeds_produced, insecticide_resistance):
+        self.__species = species
+        self.__sunlight = sunlight
+        self.__seeds_produced = seeds_produced
+        self.__insecticide_resistance = insecticide_resistance
         self.__required_locations = []
-        self.__sunlight = ''
-        self.__seeds_produced = 0
-        self.__insecticide_resistance = ''
 
     @property
     def species(self):
         return self.__species
 
-    @property
-    def required_locations(self):
-        return self.__required_locations
 
     @property
     def sunlight(self):
@@ -27,6 +24,10 @@ class Plant:
     def insecticide_resistance(self):
         return self.__insecticide_resistance
 
+    @property
+    def required_locations(self):
+        return self.__required_locations
+
     @species.setter
     def species(self, species_name):
         if type(species_name) is str:
@@ -34,11 +35,6 @@ class Plant:
         else:
             raise TypeError("Species must be a string.")
 
-    def add_location(self, location):
-        if type(location) is str:
-            self.__required_locations.append(location)
-        else:
-            raise TypeError("location must be a string.")
 
     @seeds_produced.setter
     def seeds_produced(self, num_seeds):
@@ -54,3 +50,8 @@ class Plant:
         else:
             raise TypeError("Insecticide resistance must be a string.")
 
+    def add_location(self, location):
+        if type(location) is str:
+            self.__required_locations.append(location)
+        else:
+            raise TypeError("location must be a string.")
