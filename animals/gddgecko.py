@@ -5,7 +5,7 @@ from interfaces import ITerrestrial
 class GDDGecko(Animal, IWalking, ITerrestrial, Identifiable):
 
     def __init__(self):
-        Animal.__init__(self, "'Ulae")
+        Animal.__init__(self, "Gold Dust Day Gecko")
         IWalking.__init__(self)
         Identifiable.__init__(self)
         ITerrestrial.__init__(self)
