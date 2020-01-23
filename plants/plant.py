@@ -1,4 +1,7 @@
-class Plant:
+from interfaces import Identifiable
+
+
+class Plant(Identifiable):
 
     def __init__(self, species, sunlight, seeds_produced, insecticide_resistance):
         self.__species = species
@@ -6,6 +9,7 @@ class Plant:
         self.__seeds_produced = seeds_produced
         self.__insecticide_resistance = insecticide_resistance
         self.__required_locations = []
+        Identifiable.__init__(self)
 
     @property
     def species(self):
