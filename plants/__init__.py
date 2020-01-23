@@ -1,2 +1,2 @@
 from .plant import Plant
-from .retree import RiverEucalyptusTree
+from .retree import RainbowEucalyptusTree
