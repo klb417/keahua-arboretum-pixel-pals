@@ -1,12 +1,15 @@
 import os
-from river_dolphin import RiverDolphin
+from animals.river_dolphin import RiverDolphin
 
 def feeding_animals(animal):
+    my_prey_list = list(animal.prey)
     os.system('cls' if os.name == 'nt' else 'clear')
-    for index, prey in enumerate(animal.__prey, 1):
+    for index, prey in enumerate(my_prey_list, 1):
         print(f"{index}. {prey}")
-    choice = input(f"What is on the menu for the {animal.name} today? >")
-    if choice == f"{index}":
+        print(my_prey_list)
+    choice = input(f"What is on the menu for the {animal.species} today? >")
+    print(choice, index, prey)
+    if choice == index:
         animal.feed(prey)
 
 def feed_animal():
@@ -47,5 +50,3 @@ def feed_animal():
         hhfspider = Happy_Face_Spider()
         pass
 
-
-feed_animal()
