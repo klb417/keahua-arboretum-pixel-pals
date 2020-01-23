@@ -20,7 +20,6 @@ from plants import (
 
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
-keahua.rivers.append("River")
 
 def build_menu():
     os.system("cls" if os.name == "nt" else "clear")
