@@ -1,4 +1,4 @@
-from animals import RiverDolphin
+from animals import RiverDolphin, nenegoose, Ulae, Kīkākapu, Pueo, Opeapea, HHFSpider, GDDGecko
 
 def release_animal(arboretum):
     animal = None
@@ -29,25 +29,28 @@ def release_animal(arboretum):
             arboretum.rivers[int(choice) - 1].animals.append(animal)
 
     if choice == "2":
-        pass
+        animal == GDDGecko()
+        
 
     if choice == "3":
-        pass
+        animal == nenegoose()
+
 
     if choice == "4":
-        pass
+        animal == Kīkākapu()
+
 
     if choice == "5":
-        pass
+        animal == Pueo()
 
     if choice == "6":
-        pass
+        animal == Ulae()
 
     if choice == "7":
-        pass
+        animal == Opeapea()
 
     if choice == "8":
-        pass
+        animal == HHFSpider()
 
     if arboretum.rivers == []:
         print("Please go create a location for this animal.")
