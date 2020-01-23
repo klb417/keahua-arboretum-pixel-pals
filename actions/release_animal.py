@@ -17,6 +17,16 @@ def release_animal(arboretum):
 
     if choice == "1":
         animal = RiverDolphin()
+        if arboretum.rivers == []:
+            print("Please go create a location for this animal.")
+        else: 
+            for index, river in enumerate(arboretum.rivers):
+                print(f'{index + 1}. River {river}')
+
+            print("Release the animal into which biome?")
+            choice = input("> ")
+
+            arboretum.rivers[int(choice) - 1].animals.append(animal)
 
     if choice == "2":
         pass
@@ -39,13 +49,15 @@ def release_animal(arboretum):
     if choice == "8":
         pass
 
+    if arboretum.rivers == []:
+        print("Please go create a location for this animal.")
+    else: 
+        for index, river in enumerate(arboretum.rivers):
+            print(f'{index + 1}. River {river}')
 
-    for index, river in enumerate(arboretum.rivers):
-        print(f'{index + 1}. River {river.id}')
+        print("Release the animal into which biome?")
+        choice = input("> ")
 
-    print("Release the animal into which biome?")
-    choice = input("> ")
-
-    arboretum.rivers[int(choice) - 1].animals.append(animal)
+        arboretum.rivers[int(choice) - 1].animals.append(animal)
 
 
