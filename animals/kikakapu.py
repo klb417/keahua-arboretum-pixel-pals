@@ -21,4 +21,4 @@ class Kīkākapu(Animal, IFreshwater, Identifiable):
 
 
     def __str__(self):
-        return f"Kīkākapu {self.id}. Give me Flies!"
+        return f"Kīkākapu {self.id}. I want more Planktonic Animals but...... Crunchberries will do!"
