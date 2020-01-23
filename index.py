@@ -10,6 +10,11 @@ from actions import (
     cultivate_plant,
     feed_animal,
 )
+from plants import (
+    Plant,
+    RainbowEucalyptusTree,
+)
+
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
 keahua.rivers.append("River")
