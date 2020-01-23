@@ -21,6 +21,24 @@ def release_animal(arboretum):
     if choice == "2":
         pass
 
+    if choice == "3":
+        pass
+
+    if choice == "4":
+        pass
+
+    if choice == "5":
+        pass
+
+    if choice == "6":
+        pass
+
+    if choice == "7":
+        pass
+
+    if choice == "8":
+        pass
+
 
     for index, river in enumerate(arboretum.rivers):
         print(f'{index + 1}. River {river.id}')
