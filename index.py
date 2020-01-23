@@ -8,6 +8,11 @@ from actions import (
     cultivate_plant,
     feed_animal,
 )
+from plants import (
+    Plant,
+    RiverEucalyptusTree,
+)
+
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
 

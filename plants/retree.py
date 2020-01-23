@@ -1,5 +1,4 @@
-# from plants import Plant
-from plant import Plant
+from plants import Plant
 
 class RiverEucalyptusTree(Plant):
     def __init__(self):
@@ -7,6 +6,3 @@ class RiverEucalyptusTree(Plant):
         self.add_location("forrest")
 
 
-test = RiverEucalyptusTree()
-
-print(test.required_locations)
