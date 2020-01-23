@@ -4,7 +4,14 @@ def release_animal(arboretum):
     animal = None
 
     print("1. River Dolphin")
-    print("2. Dragonfly")
+    print("2. Gold Dust Day Gecko")
+    print("3. Nene Goose")
+    print("4. Kīkākapu")
+    print("5. Pueo")
+    print("6. 'Ulae")
+    print("7. Ope'ape'a")
+    print("8. Happy-Face Spider")
+
 
     choice = input("Choose animal to release > ")
 
