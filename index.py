@@ -12,9 +12,10 @@ from plants import (
     Plant,
     RainbowEucalyptusTree,
     Sliversword,
+    MountainAppleTree,
 )
 
-test = Sliversword()
+test = MountainAppleTree()
 print(test.required_locations)
 
 
