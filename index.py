@@ -11,6 +11,9 @@ from actions import (
 from plants import (
     Plant,
     RainbowEucalyptusTree,
+    Sliversword,
+    MountainAppleTree,
+    BlueJadeVine
 )
 
 
