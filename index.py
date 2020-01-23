@@ -10,7 +10,7 @@ from actions import (
 )
 from plants import (
     Plant,
-    RiverEucalyptusTree,
+    RainbowEucalyptusTree,
 )
 
 
