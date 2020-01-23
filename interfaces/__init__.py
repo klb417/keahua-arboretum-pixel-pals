@@ -10,3 +10,4 @@ from .habitat import ITerrestrial
 from .animal import IFlying
 # from .habitat.contains_animals import IContainsAnimals
 # from .habitat.contains_plants import IContainsPlants
+from .habitat import IContainsAnimals, IContainsPlants
