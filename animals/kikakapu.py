@@ -7,7 +7,7 @@ class Kīkākapu(Animal, IFreshwater, Identifiable):
         Animal.__init__(self, "Kīkākapu")
         IFreshwater.__init__(self)
         Identifiable.__init__(self)
-        self.__prey = { "Planktonic Animals", "Vegetation" }
+        self.__prey = { "Planktonic Animals", "Vegetation", "Trout", "Mackarel", "Salmon", "Sardine" }
 
     @property
     def prey(self):
