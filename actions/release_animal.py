@@ -25,8 +25,12 @@ def release_animal(arboretum):
             print("Release the animal into which biome?")
 
             choice = input("> ")
-
-            arboretum.rivers[int(choice) - 1].animals.append(animal)
+            if len(arboretum.rivers[int(choice) - 1].animals) < 12:
+                arboretum.rivers[int(choice) - 1].animals.append(animal)
+            else:
+                print("****   That biome is not large enough   ****       ****    Please choose another one      ****")
+                for index, river in enumerate(arboretum.rivers):
+                    print(f'{index + 1}. River ({len(river.animals)} animals)')
 
     if choice == "2":
         animal == GDDGecko()
