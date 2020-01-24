@@ -32,9 +32,13 @@ from animals import (
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
 
+# os.system("say Welcome to Arboretum!" if os.name != "nt" else "cls")
 
 def build_menu():
     os.system("cls" if os.name == "nt" else "clear")
+    print( '''+-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
     print("1. Annex Habitat")
     print("2. Release Animal into Habitat")
     print("3. Feed Animal")
@@ -49,7 +53,7 @@ def main_menu():
     Arguments: None
     """
     build_menu()
-    choice = input(">> ")
+    choice = input("\nPlease select an option from the menu. >  ")
 
     if choice == "1":
         annex_biome(keahua)

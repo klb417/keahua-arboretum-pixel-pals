@@ -3,8 +3,15 @@ from plants import RainbowEucalyptusTree, Sliversword, MountainAppleTree, BlueJa
 from .get_plant_biomes import get_plant_biomes
 from .show_plant_biomes import show_plant_biomes
 
-# Function for adding a plant to the arboretum
+# Function for displaying a menu for adding a plant to the arboretum.
 def cultivate_plant(arboretum):
+    '''Function for displaying a menu for adding a plant to the arboretum.
+    Takes input from a user and calls the get_plant_biomes function and
+    the show_plant_biomes functions.
+
+    ARGUMENTS:
+    arboretum (object)
+    '''
 
     # Clears the terminal of previous contents
     os.system("cls" if os.name == "nt" else "clear")
