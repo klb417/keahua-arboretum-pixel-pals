@@ -20,3 +20,19 @@ def cultivate_plant(arboretum):
 Choose a plant to cultivate, or
 Type M to return to the main menu. > ''')
 
+    # if statements check user input, when it evaluates to true the selected plant
+    # is used as the basis for the next menu
+
+    if choice == "1":
+        pass
+    elif choice == "2":
+        pass
+    elif choice == "3":
+        pass
+    elif choice == "4":
+        pass
+    elif choice.lower() == "m":
+        break
+    else:
+        cultivate_plant(arboretum)
+
