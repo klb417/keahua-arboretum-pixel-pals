@@ -2,6 +2,8 @@
 from .animal.freshwater import IFreshwater
 from .animal.saltwater import ISaltwater
 from .habitat.aquatic import IAquatic
+from .animal import IFreshwater
+from .habitat import IAquatic
 # from .flying import IFlying
 from .animal.walking import IWalking
 # from .swimming import ISwimming
