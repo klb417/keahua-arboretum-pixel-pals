@@ -48,6 +48,9 @@ def release_animal(arboretum):
             choice = input("> ")
 
             arboretum.forests[int(choice) - 1].animals.append(animal)
+
+
+
     if choice == "3":
         animal == nenegoose()
         if arboretum.grasslands == []:
@@ -61,9 +64,11 @@ def release_animal(arboretum):
 
             arboretum.grasslands[int(choice) - 1].animals.append(animal)
 
+
+
+
     if choice == "4":
         animal == Kīkākapu()
-
 
     if choice == "5":
         animal == Pueo()
@@ -73,7 +78,7 @@ def release_animal(arboretum):
 
     if choice == "7":
         animal == Opeapea()
-
+        
     if choice == "8":
         animal == HHFSpider()
 
