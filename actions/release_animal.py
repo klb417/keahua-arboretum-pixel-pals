@@ -91,6 +91,26 @@ def release_animal(arboretum):
 
     if choice == "5":
         animal = Pueo()
+        if arboretum.grasslands == []:
+            print("Please go create a location for this animal.")
+            input("\n\nPress any key to continue...")
+
+        else: 
+            new_list = arboretum.grasslands + arboretum.forests
+            for index, place in enumerate(new_list):
+                print(f'{index + 1}. {place.name} {place.id} ({len(place.animals)} animals)')
+            print("Release the animal into which biome?")
+            choice = input("> ")
+            selection = new_list[int(choice) - 1].id
+            forest = list(filter(lambda x: x.id == selection, arboretum.forests))
+            grassland = list(filter(lambda x: x.id == selection, arboretum.grasslands))
+
+            if grassland != []:
+                grassland[0].add_animal(animal)
+            if forest != []: 
+                forest[0].add_animal(animal)
+
+
 
     if choice == "6":
         animal = Ulae()
