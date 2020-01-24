@@ -6,7 +6,7 @@ def release_animal(arboretum):
     print("1. River Dolphin")
     print("2. Gold Dust Day Gecko")
     print("3. Nene Goose")
-    print("4. Kīkākapu")
+    print("4. Kikakapu")
     print("5. Pueo")
     print("6. 'Ulae")
     print("7. Ope'ape'a")
@@ -58,7 +58,7 @@ def release_animal(arboretum):
             print("Please go create a location for this animal.")
         else: 
             for index, grassland in enumerate(arboretum.grasslands):
-                print(f'{index + 1}. Grassland ({len(place.animals)} animals)')
+                print(f'{index + 1}. Grassland ({len(grassland.animals)} animals)')
             print("Release the animal into which biome?")
 
             choice = input("> ")
@@ -118,7 +118,7 @@ def release_animal(arboretum):
             print("Please go create a location for this animal.")
         else: 
             for index, coastline in enumerate(arboretum.coastlines):
-                print(f'{index + 1}. Coastline ({len(place.animals)} animals)')
+                print(f'{index + 1}. Coastline ({len(coastline.animals)} animals)')
             print("Release the animal into which biome?")
 
             choice = input("> ")
@@ -152,7 +152,7 @@ def release_animal(arboretum):
             print("Please go create a location for this animal.")
         else: 
             for index, swamp in enumerate(arboretum.swamps):
-                print(f'{index + 1}. Swamp ({len(place.animals)} animals)')
+                print(f'{index + 1}. Swamp ({len(swamp.animals)} animals)')
             print("Release the animal into which biome?")
 
             choice = input("> ")
