@@ -27,7 +27,7 @@ def release_animal(arboretum):
                 print(f'{index + 1}. {place.name} {place.id} ({len(place.animals)} animals)')
             print("Release the animal into which biome?")
             choice = input("> ")
-            selection = new_list[index - 1].id
+            selection = new_list[int(choice) - 1].id
             river = list(filter(lambda x: x.id == selection, arboretum.rivers))
             coast = list(filter(lambda x: x.id == selection, arboretum.coastlines))
             if river != []:
@@ -80,12 +80,13 @@ def release_animal(arboretum):
                 print(f'{index + 1}. {place.name} {place.id} ({len(place.animals)} animals)')
             print("Release the animal into which biome?")
             choice = input("> ")
-            selection = new_list[index - 1].id
-            river = list(filter(lambda x: x.id == selection, arboretum.rivers))
+            selection = new_list[int(choice) - 1].id
             swamp = list(filter(lambda x: x.id == selection, arboretum.swamps))
+            river = list(filter(lambda x: x.id == selection, arboretum.rivers))
+
             if river != []:
                 river[0].add_animal(animal)
-            elif swamp != []: 
+            if swamp != []: 
                 swamp[0].add_animal(animal)
 
     if choice == "5":
