@@ -19,35 +19,47 @@ def release_animal(arboretum):
 
     if choice == "1":
         animal = RiverDolphin()
-        def release_dolphin():
+        # clear the terminal
+        os.system("cls" if os.name == "nt" else "clear")
+        if arboretum.rivers == [] and arboretum.coastlines == []:
             os.system("cls" if os.name == "nt" else "clear")
-            if arboretum.rivers == [] and arboretum.coastlines == []:
-                os.system("cls" if os.name == "nt" else "clear")
-                print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
-                input("\n\nPress any key to continue...")
+            print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
+            input("\n\nPress any key to continue...")
 
-            else: 
-                new_list = arboretum.rivers + arboretum.coastlines
-                for index, place in enumerate(new_list):
-                    print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
-                print("Release the animal into which biome?")
-                choice = input("> ")
+        else: 
+            # combine the rivers and coastline lists
+            new_list = arboretum.rivers + arboretum.coastlines
+            for index, place in enumerate(new_list):
+                print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
+            print("Release the animal into which biome?")
+            choice = input("> ")
+            def release_dolphin():
+                # capture the selection
                 selection = new_list[int(choice) - 1].id
+                # search the river list for the selection
                 river = list(filter(lambda x: x.id == selection, arboretum.rivers))
+                # search the coast list for the selection
                 coast = list(filter(lambda x: x.id == selection, arboretum.coastlines))
                 if river != []:
+                    # add the animal to the river that was found in the search
                     river[0].add_animal(animal)
                 elif coast != []: 
+                    # add the animal to the river that was found in the search
                     coast[0].add_animal(animal)
                 os.system("cls" if os.name == "nt" else "clear")
                 print(F'Success! The {animal.species} has been added to the biome!')
                 input("\n\nPress any key to continue...")
-        try:
-            release_dolphin()
-        except:
-            os.system("cls" if os.name == "nt" else "clear")
-            print(f"Ooops! That doesn't seem to be an option. Please select one of the menu options.")
-            release_dolphin()
+            try: 
+                release_dolphin()
+            except: 
+                print(f"Ooops! That doesn't seem to be an option. Please select one of the menu options.")
+                # release_dolphin()
+        # try:
+        #     release_dolphin()
+        # except:
+        #     os.system("cls" if os.name == "nt" else "clear")
+        #     print(f"Ooops! That doesn't seem to be an option. Please select one of the menu options.")
+        #     release_dolphin()
             
 
 
