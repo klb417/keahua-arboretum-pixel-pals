@@ -12,8 +12,10 @@ class Grassland(IContainsAnimals, IContainsPlants, Identifiable, Biome):
         Biome.__init__(self, name)
 
     def add_animal(self, animal):
+        # Add in checks for animal type
         self.animals.append(animal)
 
     def add_plant(self, plant):
+        # Add in checks for plant type
         self.plants.append(plant)
         
