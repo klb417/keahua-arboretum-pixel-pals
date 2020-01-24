@@ -3,8 +3,17 @@ from plants import RainbowEucalyptusTree, Sliversword, MountainAppleTree, BlueJa
 
 
 # Function for returning list of biomes a selected plant can be added to
-def acceptable_plant_biomes(plant, arboretum):
-    print(plant.required_locations)
+def get_plant_biomes(plant, arboretum):
+    allowed_biomes = plant.required_locations
+    all_biomes = arboretum.biomes
+    print("Allowed Biomes: ", allowed_biomes)
+    print("All Biomes: ", all_biomes)
+    for biome in allowed_biomes:
+        for key, value in all_biomes.items():
+            if key == biome:
+                print(f"the {biome} is in arboretum!")
+                print(all_biomes[biome])
+            
     choice = input()
 
 
@@ -32,7 +41,7 @@ Type M to return to the main menu. > ''')
 
     if choice == "1":
         plant = RainbowEucalyptusTree()
-        acceptable_plant_biomes(plant, arboretum)
+        get_plant_biomes(plant, arboretum)
     elif choice == "2":
         pass
     elif choice == "3":
