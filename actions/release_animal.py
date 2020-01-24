@@ -22,19 +22,36 @@ def release_animal(arboretum):
         else: 
             for index, river in enumerate(arboretum.rivers):
                 print(f'{index + 1}. River {river.id}')
-
             print("Release the animal into which biome?")
+
             choice = input("> ")
 
             arboretum.rivers[int(choice) - 1].animals.append(animal)
 
     if choice == "2":
         animal == GDDGecko()
-        
+        if arboretum.forests == []:
+            print("Please go create a location for this animal.")
+        else: 
+            for index, forest in enumerate(arboretum.forests):
+                print(f'{index + 1}. Forest {forest.id} ({len(forest.animals)} animals)')
+            print("Release the animal into which biome?")
 
+            choice = input("> ")
+
+            arboretum.forests[int(choice) - 1].animals.append(animal)
     if choice == "3":
         animal == nenegoose()
+        if arboretum.grasslands == []:
+            print("Please go create a location for this animal.")
+        else: 
+            for index, grassland in enumerate(arboretum.grasslands):
+                print(f'{index + 1}. Grassland {grassland.id}')
+            print("Release the animal into which biome?")
 
+            choice = input("> ")
+
+            arboretum.grasslands[int(choice) - 1].animals.append(animal)
 
     if choice == "4":
         animal == Kīkākapu()
@@ -52,15 +69,15 @@ def release_animal(arboretum):
     if choice == "8":
         animal == HHFSpider()
 
-    if arboretum.rivers == []:
-        print("Please go create a location for this animal.")
-    else: 
-        for index, river in enumerate(arboretum.rivers):
-            print(f'{index + 1}. River {river}')
+    # if arboretum.rivers == []:
+    #     print("Please go create a location for this animal.")
+    # else: 
+    #     for index, river in enumerate(arboretum.rivers):
+    #         print(f'{index + 1}. River {river}')
 
-        print("Release the animal into which biome?")
-        choice = input("> ")
+    #     print("Release the animal into which biome?")
+    #     choice = input("> ")
 
-        arboretum.rivers[int(choice) - 1].animals.append(animal)
+    #     arboretum.rivers[int(choice) - 1].animals.append(animal)
 
 
