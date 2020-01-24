@@ -1,4 +1,11 @@
 import os
+from plants import RainbowEucalyptusTree, Sliversword, MountainAppleTree, BlueJadeVine
+
+
+# Function for returning list of biomes a selected plant can be added to
+def acceptable_plant_biomes(plant, arboretum):
+    print(plant.required_locations)
+    choice = input()
 
 
 # Function for adding a plant to the arboretum
@@ -24,7 +31,8 @@ Type M to return to the main menu. > ''')
     # is used as the basis for the next menu
 
     if choice == "1":
-        pass
+        plant = RainbowEucalyptusTree()
+        acceptable_plant_biomes(plant, arboretum)
     elif choice == "2":
         pass
     elif choice == "3":
