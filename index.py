@@ -18,6 +18,9 @@ from plants import (
     BlueJadeVine
 )
 
+from animals import (RiverDolphin, nenegoose, Ulae, Kīkākapu, Pueo, Opeapea, HHFSpider, GDDGecko)
+
+
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
 
