@@ -7,7 +7,7 @@ from interfaces import IContainsPlants
 from .biome import Biome
 
 
-class Forest(IContainsAnimals, IContainsPlants, Identifiable, Biome):
+class Swamp(IContainsAnimals, IContainsPlants, Identifiable, Biome):
 
     def __init__(self, name):
         IContainsAnimals.__init__(self)
