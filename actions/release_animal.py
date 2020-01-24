@@ -17,7 +17,7 @@ def release_animal(arboretum):
 
     if choice == "1":
         animal = RiverDolphin()
-        if arboretum.rivers == []:
+        if arboretum.rivers == [] and arboretum.coastlines == []:
             print("Please go create a location for this animal.")
             input("\n\nPress any key to continue...")
 
@@ -70,7 +70,7 @@ def release_animal(arboretum):
 
     if choice == "4":
         animal = Kikakapu()
-        if arboretum.rivers == []:
+        if arboretum.rivers == [] and arboretum.swamps == []:
             print("Please go create a location for this animal.")
             input("\n\nPress any key to continue...")
 
@@ -91,7 +91,7 @@ def release_animal(arboretum):
 
     if choice == "5":
         animal = Pueo()
-        if arboretum.grasslands == []:
+        if arboretum.grasslands == [] and arboretum.forests == []:
             print("Please go create a location for this animal.")
             input("\n\nPress any key to continue...")
 
@@ -127,6 +127,24 @@ def release_animal(arboretum):
 
     if choice == "7":
         animal = Opeapea()
+        if arboretum.mountains == [] and arboretum.forests == []:
+            print("Please go create a location for this animal.")
+            input("\n\nPress any key to continue...")
+
+        else: 
+            new_list = arboretum.mountains + arboretum.forests
+            for index, place in enumerate(new_list):
+                print(f'{index + 1}. {place.name} {place.id} ({len(place.animals)} animals)')
+            print("Release the animal into which biome?")
+            choice = input("> ")
+            selection = new_list[int(choice) - 1].id
+            forest = list(filter(lambda x: x.id == selection, arboretum.forests))
+            mountain = list(filter(lambda x: x.id == selection, arboretum.mountains))
+
+            if mountain != []:
+                mountain[0].add_animal(animal)
+            if forest != []: 
+                forest[0].add_animal(animal)
         
     if choice == "8":
         animal = HHFSpider()
@@ -140,17 +158,5 @@ def release_animal(arboretum):
             choice = input("> ")
 
             arboretum.swamps[int(choice) - 1].animals.append(animal)
-
-
-    # if arboretum.rivers == []:
-    #     print("Please go create a location for this animal.")
-    # else: 
-    #     for index, river in enumerate(arboretum.rivers):
-    #         print(f'{index + 1}. River {river}')
-
-    #     print("Release the animal into which biome?")
-    #     choice = input("> ")
-
-    #     arboretum.rivers[int(choice) - 1].animals.append(animal)
 
 
