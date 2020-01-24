@@ -3,6 +3,14 @@ import os
 
 # Function for displaying the possible biomes a plant can be added to
 def show_plant_biomes(plant, biome_list):
+    '''Function that displays a menu for selecting which biome a plant
+    should be cultivated in.
+
+    ARGUMENTS:
+    plant (object)
+    biome_list (list of objects)
+    '''
+
     # Clears the terminal of previous contents
     os.system("cls" if os.name == "nt" else "clear")
     if biome_list:
