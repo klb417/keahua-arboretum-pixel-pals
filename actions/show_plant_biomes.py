@@ -27,7 +27,7 @@ Type M to return to the main menu. > ''')
             try: 
                 selected_biome = biome_list[int(choice) -1]
                 selected_biome.add_plant(plant)
-                print(f"\nThe {plant.species} was added to {selected_biome.name}.")
+                print(f"\nThe {plant.name} was added to {selected_biome.name}.")
                 input('\n\n Type any key to return to the main menu.')
             except:
                 show_plant_biomes(plant, biome_list)
