@@ -34,7 +34,8 @@ def feed_animal():
         # print(choice, index, gddgprey)
 
         g_d_d_gecko.feed(gddgprey[int(choice) - 1])
-    if choice == "2":
+        
+    elif choice == "2":
         river_dolphin = RiverDolphin()
         rvrdolprey = tuple(river_dolphin.prey)
         for index, prey in enumerate(rvrdolprey):
@@ -43,7 +44,8 @@ def feed_animal():
         choice = input("> ")
 
         river_dolphin.feed(rvrdolprey[int(choice) - 1])
-    if choice == "3":
+
+    elif choice == "3":
         nene_goose = nenegoose()
         neneprey = tuple(nene_goose.prey)
         for index, prey in enumerate(neneprey):
@@ -52,7 +54,8 @@ def feed_animal():
         choice = input("> ")
 
         nene_goose.feed(neneprey[int(choice) - 1])
-    if choice == "4":
+
+    elif choice == "4":
         kikakapu = Kikakapu()
         kikaprey = tuple(kikakapu.prey)
         for index, prey in enumerate(kikaprey):
@@ -61,7 +64,8 @@ def feed_animal():
         choice = input("> ")
 
         kikakapu.feed(kikaprey[int(choice) - 1])
-    if choice == "5":
+
+    elif choice == "5":
         pueo = Pueo()
         pueoprey = tuple(pueo.prey)
         for index, prey in enumerate(pueoprey):
@@ -70,7 +74,8 @@ def feed_animal():
         choice = input("> ")
 
         pueo.feed(pueoprey[int(choice) - 1])
-    if choice == "6":
+
+    elif choice == "6":
         ulae = Ulae()
         ulaeprey = tuple(ulae.prey)
         for index, prey in enumerate(ulaeprey):
@@ -79,7 +84,8 @@ def feed_animal():
         choice = input("> ")
 
         ulae.feed(ulaeprey[int(choice) - 1])
-    if choice == "7":
+
+    elif choice == "7":
         opeapea = Opeapea()
         opeprey = tuple(opeapea.prey)
         for index, prey in enumerate(opeprey):
@@ -88,7 +94,8 @@ def feed_animal():
         choice = input("> ")
 
         opeapea.feed(opeprey[int(choice) - 1])
-    if choice == "8":
+
+    elif choice == "8":
         hhfspider = HHFSpider()
         hhfsprey = tuple(hhfspider.prey)
         for index, prey in enumerate(hhfsprey):
