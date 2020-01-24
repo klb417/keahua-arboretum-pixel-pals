@@ -34,24 +34,6 @@ def release_animal(arboretum):
                 river[0].add_animal(animal)
             elif coast != []: 
                 coast[0].add_animal(animal)
-            # for index, river in enumerate(arboretum.rivers):
-            #     print(f'{index + 1}. River ({len(river.animals)} animals)')
-            # print("Release the animal into which biome?")
-            # choice = input("> ")
-
-
-            # if len(arboretum.rivers[int(choice) - 1].animals) < 2:
-            #     arboretum.rivers[int(choice) - 1].animals.append(animal)
-
-
-            # else:
-            #     print("****   That biome is not large enough   ****       ****    Please choose another one      ****")
-            #     for index, river in enumerate(arboretum.rivers):
-            #         print(f'{index + 1}. River ({len(river.animals)} animals)')
-            #     choice = input("> ")
-            #     if len(arboretum.rivers[int(choice) - 1].animals) < 2:
-            #         arboretum.rivers[int(choice) - 1].animals.append(animal)
-
 
 
     if choice == "2":
@@ -88,6 +70,23 @@ def release_animal(arboretum):
 
     if choice == "4":
         animal = Kikakapu()
+        if arboretum.rivers == []:
+            print("Please go create a location for this animal.")
+            input("\n\nPress any key to continue...")
+
+        else: 
+            new_list = arboretum.rivers + arboretum.swamps
+            for index, place in enumerate(new_list):
+                print(f'{index + 1}. {place.name} {place.id} ({len(place.animals)} animals)')
+            print("Release the animal into which biome?")
+            choice = input("> ")
+            selection = new_list[index - 1].id
+            river = list(filter(lambda x: x.id == selection, arboretum.rivers))
+            swamp = list(filter(lambda x: x.id == selection, arboretum.swamps))
+            if river != []:
+                river[0].add_animal(animal)
+            elif swamp != []: 
+                swamp[0].add_animal(animal)
 
     if choice == "5":
         animal = Pueo()
