@@ -18,6 +18,7 @@ from plants import (
     BlueJadeVine,
 )
 
+<<<<<<< HEAD
 from animals import (
     RiverDolphin,
     nenegoose,
@@ -28,6 +29,9 @@ from animals import (
     HHFSpider,
     GDDGecko,
 )
+=======
+from animals import (RiverDolphin, nenegoose, Ulae, Kikakapu, Pueo, Opeapea, HHFSpider, GDDGecko)
+>>>>>>> master
 
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
@@ -58,7 +62,7 @@ def main_menu():
         release_animal(keahua)
 
     if choice == "3":
-        feed_animal(keahua)
+        feed_animal()
 
     if choice == "4":
         cultivate_plant(keahua)

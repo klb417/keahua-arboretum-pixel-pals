@@ -6,7 +6,7 @@ class RiverDolphin(Animal, IFreshwater, Identifiable):
 
     def __init__(self):
         Animal.__init__(self, "River dolphin")
-
+        IFreshwater.__init__(self)
         Identifiable.__init__(self)
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
 
@@ -17,6 +17,7 @@ class RiverDolphin(Animal, IFreshwater, Identifiable):
     def feed(self, prey):
         if prey in self.__prey:
             print(f'The dolphin ate {prey} for a meal')
+            input("Press any button to continue...")
         else:
             print(f'The dolphin rejects the {prey}')
 

@@ -17,6 +17,7 @@ class Opeapea(Animal, IFlying, Identifiable):
     def feed(self, prey):
         if prey in self.__prey:
             print(f"The Opeapea ate {prey} for a meal")
+            input("Press any button to continue...")
         else:
             print(f"The Opeapea rejects the {prey}")
 
