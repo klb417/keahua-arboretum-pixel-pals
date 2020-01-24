@@ -16,8 +16,8 @@ Where would you like to cultivate the {plant.species}?
 Type M to return to the main menu. > ''')
     else:
         input(f'''Whoops!
-        
-There are no available biomes in the arboretum that are suitable for {plant.species}.
+
+There are no available habitats in the arboretum that are suitable for {plant.species}.
 
 Press any key to return to the main menu. ''')
 
