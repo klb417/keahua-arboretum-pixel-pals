@@ -54,7 +54,6 @@ def main_menu():
     if choice == "1":
         annex_biome(keahua)
 
-
     if choice == "2":
         release_animal(keahua)
 

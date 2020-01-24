@@ -2,6 +2,12 @@ import os
 from plants import RainbowEucalyptusTree, Sliversword, MountainAppleTree, BlueJadeVine
 from .get_plant_biomes import get_plant_biomes
 
+# Function for displaying the possible biomes a plant can be added to
+def show_plant_biomes(plant, biome_list):
+    for index, biome in enumerate(biome_list):
+        print(f'{index + 1}. {biome.name} ( plants)')
+    choice = input()
+
 
 # Function for adding a plant to the arboretum
 def cultivate_plant(arboretum):
@@ -28,9 +34,7 @@ Type M to return to the main menu. > ''')
     if choice == "1":
         plant = RainbowEucalyptusTree()
         plant_biomes = get_plant_biomes(plant, arboretum)
-        for pb in plant_biomes:
-            print(pb.name)
-        new_choice = input()
+        show_plant_biomes(plant, plant_biomes)
     elif choice == "2":
         pass
     elif choice == "3":
