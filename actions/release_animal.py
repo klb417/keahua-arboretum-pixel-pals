@@ -55,7 +55,7 @@ def release_animal(arboretum):
 
 
     if choice == "2":
-        animal == GDDGecko()
+        animal = GDDGecko()
         if arboretum.forests == []:
             print("Please go create a location for this animal.")
         else: 
@@ -69,8 +69,9 @@ def release_animal(arboretum):
 
 
 
+
     if choice == "3":
-        animal == nenegoose()
+        animal = nenegoose()
         if arboretum.grasslands == []:
             print("Please go create a location for this animal.")
         else: 
@@ -86,19 +87,30 @@ def release_animal(arboretum):
 
 
     if choice == "4":
-        animal == Kikakapu()
+        animal = Kikakapu()
 
     if choice == "5":
-        animal == Pueo()
+        animal = Pueo()
 
     if choice == "6":
-        animal == Ulae()
+        animal = Ulae()
 
     if choice == "7":
-        animal == Opeapea()
+        animal = Opeapea()
         
     if choice == "8":
-        animal == HHFSpider()
+        animal = HHFSpider()
+        if arboretum.swamps == []:
+            print("Please go create a location for this animal.")
+        else: 
+            for index, swamp in enumerate(arboretum.swamps):
+                print(f'{index + 1}. Swamp {swamp.id}')
+            print("Release the animal into which biome?")
+
+            choice = input("> ")
+
+            arboretum.swamps[int(choice) - 1].animals.append(animal)
+
 
     # if arboretum.rivers == []:
     #     print("Please go create a location for this animal.")
