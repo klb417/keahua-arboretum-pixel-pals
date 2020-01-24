@@ -32,7 +32,7 @@ Type M to return to the main menu. > ''')
     elif choice == "4":
         pass
     elif choice.lower() == "m":
-        break
+        return
     else:
         cultivate_plant(arboretum)
 
