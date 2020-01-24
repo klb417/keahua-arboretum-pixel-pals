@@ -32,8 +32,12 @@ def feed_animal():
         choice = input("> ")
 
         # print(choice, index, gddgprey)
-
-        g_d_d_gecko.feed(gddgprey[int(choice) - 1])
+        try:
+            g_d_d_gecko.feed(gddgprey[int(choice) - 1])
+        except:
+            print("pick a number on the list...")
+            input("Press any button to continue.")
+            return feed_animal()
         
     elif choice == "2":
         river_dolphin = RiverDolphin()
@@ -42,8 +46,12 @@ def feed_animal():
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the River Dolphin today?")
         choice = input("> ")
-
-        river_dolphin.feed(rvrdolprey[int(choice) - 1])
+        try:
+            river_dolphin.feed(rvrdolprey[int(choice) - 1])
+        except:
+            print("pick a number on the list...")
+            input("Press any button to continue.")
+            return feed_animal()
 
     elif choice == "3":
         nene_goose = nenegoose()
@@ -52,8 +60,12 @@ def feed_animal():
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the Nene Goose today?")
         choice = input("> ")
-
-        nene_goose.feed(neneprey[int(choice) - 1])
+        try:
+            nene_goose.feed(neneprey[int(choice) - 1])
+        except:
+            print("pick a number on the list...")
+            input("Press any button to continue.")
+            return feed_animal()
 
     elif choice == "4":
         kikakapu = Kikakapu()
@@ -62,9 +74,13 @@ def feed_animal():
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the Kikakapu today?")
         choice = input("> ")
-
-        kikakapu.feed(kikaprey[int(choice) - 1])
-
+        try:
+            kikakapu.feed(kikaprey[int(choice) - 1])
+        except:
+            print("pick a number on the list...")
+            input("Press any button to continue.")
+            return feed_animal()
+        
     elif choice == "5":
         pueo = Pueo()
         pueoprey = tuple(pueo.prey)
@@ -72,8 +88,13 @@ def feed_animal():
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the Pueo today?")
         choice = input("> ")
+        try:
+            pueo.feed(pueoprey[int(choice) - 1])
+        except:
+            print("pick a number on the list...")
+            input("Press any button to continue.")
+            return feed_animal()
 
-        pueo.feed(pueoprey[int(choice) - 1])
 
     elif choice == "6":
         ulae = Ulae()
@@ -82,8 +103,12 @@ def feed_animal():
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the 'Ulae today?")
         choice = input("> ")
-
-        ulae.feed(ulaeprey[int(choice) - 1])
+        try:
+            ulae.feed(ulaeprey[int(choice) - 1])
+        except:
+            print("pick a number on the list...")
+            input("Press any button to continue.")
+            return feed_animal()
 
     elif choice == "7":
         opeapea = Opeapea()
@@ -92,8 +117,12 @@ def feed_animal():
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the Ope'ape'a today?")
         choice = input("> ")
-
-        opeapea.feed(opeprey[int(choice) - 1])
+        try:
+            opeapea.feed(opeprey[int(choice) - 1])
+        except:
+            print("pick a number on the list...")
+            input("Press any button to continue.")
+            return feed_animal()
 
     elif choice == "8":
         hhfspider = HHFSpider()
@@ -102,6 +131,14 @@ def feed_animal():
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the Happy-Face Spider today?")
         choice = input("> ")
+        try:
+            hhfspider.feed(hhfsprey[int(choice) - 1])
+        except:
+            print("pick a number on the list...")
+            input("Press any button to continue.")
+            return feed_animal()
 
-        hhfspider.feed(hhfsprey[int(choice) - 1])
-
+    else:
+        print("Pick a number that is actually on the list...")
+        input("Press any key to continue.")
+        return feed_animal()
