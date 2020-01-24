@@ -4,6 +4,10 @@ def build_facility_report(arboretum):
         print(biome_category.capitalize())
         for biome in arboretum.biomes[biome_category]:
             print(f"  {biome.name} [{str(biome.id)[:8]}]")
+            inhabitants = biome.plants + biome.animals
+            # print(inhabitants)
+            for inhabitant in inhabitants:
+                print(f"    {inhabitant} ({str(inhabitant.id)[:8]})")
         print("")
 
     input("\n\nPress any key to continue...")
