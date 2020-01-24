@@ -12,6 +12,10 @@ class Plant(Identifiable):
         Identifiable.__init__(self)
 
     @property
+    def name(self):
+        return f'{self.__species} ({str(self.id)[:8]})'
+
+    @property
     def species(self):
         return self.__species
 
