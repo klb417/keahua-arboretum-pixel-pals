@@ -21,7 +21,7 @@ def release_animal(arboretum):
             print("Please go create a location for this animal.")
         else: 
             for index, river in enumerate(arboretum.rivers):
-                print(f'{index + 1}. River {river.id}')
+                print(f'{index + 1}. River ({len(river.animals)} animals)')
             print("Release the animal into which biome?")
 
             choice = input("> ")
@@ -34,7 +34,7 @@ def release_animal(arboretum):
             print("Please go create a location for this animal.")
         else: 
             for index, forest in enumerate(arboretum.forests):
-                print(f'{index + 1}. Forest {forest.id} ({len(forest.animals)} animals)')
+                print(f'{index + 1}. Forest ({len(forest.animals)} animals)')
             print("Release the animal into which biome?")
 
             choice = input("> ")
