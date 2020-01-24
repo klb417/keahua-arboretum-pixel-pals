@@ -17,6 +17,7 @@ class Pueo(Animal, ITerrestrial, Identifiable):
     def feed(self, prey):
         if prey in self.__prey:
             print(f"The Pueo ate {prey} for a meal")
+            input("Press any button to continue...")
         else:
             print(f"The Pueo rejects the {prey}")
 

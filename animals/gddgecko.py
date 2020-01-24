@@ -18,6 +18,7 @@ class GDDGecko(Animal, IWalking, ITerrestrial, Identifiable):
     def feed(self, prey):
         if prey in self.__prey:
             print(f"The Gold Dust Day Gecko ate {prey} for a meal")
+            input("Press any button to continue...")
         else:
             print(f"The Gold Dust Day Gecko rejects the {prey}")
 
