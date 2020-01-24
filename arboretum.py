@@ -46,6 +46,3 @@ class Arboretum:
     @property
     def biomes(self):
         return self.__biomes
-
-    def annex_biome(self, biome_list_type, biome_to_add):
-        self.__biomes[biome_list_type].append(biome_to_add)
