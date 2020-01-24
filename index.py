@@ -39,12 +39,21 @@ keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
 
 def build_menu():
     os.system("cls" if os.name == "nt" else "clear")
+    print(''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ 
+ ''')
+
     print("1. Annex Habitat")
     print("2. Release Animal into Habitat")
     print("3. Feed Animal")
     print("4. Add Plant to Habitat")
     print("5. Display Facility Report")
     print("6. Exit")
+    print('''
+Please select an option from the menu    
+    ''')
 
 
 def main_menu():
