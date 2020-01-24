@@ -50,11 +50,17 @@ Type M to return to the main menu. > ''')
         plant_biomes = get_plant_biomes(plant, arboretum)
         show_plant_biomes(plant, plant_biomes)
     elif choice == "2":
-        pass
+        plant = Sliversword()
+        plant_biomes = get_plant_biomes(plant, arboretum)
+        show_plant_biomes(plant, plant_biomes)
     elif choice == "3":
-        pass
+        plant = MountainAppleTree()
+        plant_biomes = get_plant_biomes(plant, arboretum)
+        show_plant_biomes(plant, plant_biomes)
     elif choice == "4":
-        pass
+        plant = BlueJadeVine()
+        plant_biomes = get_plant_biomes(plant, arboretum)
+        show_plant_biomes(plant, plant_biomes)
     elif choice.lower() == "m":
         return
     else:
