@@ -1,6 +1,6 @@
 import os
 from arboretum import Arboretum
-from biome import River, Forest, Grassland, Mountain
+from biome import River, Forest, Grassland, Mountain, Coastline
 
 # Function for adding a biome to the arboretum
 def annex_biome(arboretum):
@@ -38,6 +38,5 @@ def annex_biome(arboretum):
         river = River("River")
         arboretum.rivers.append(river)
     if choice == "6":
-        # coastline = Coastline()
-        # arboretum.coastlines.append(coastline)
-        pass
+        coastline = Coastline("Coastline")
+        arboretum.coastlines.append(coastline)
