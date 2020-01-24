@@ -1,4 +1,4 @@
-from animals import RiverDolphin, nenegoose, Ulae, Kīkākapu, Pueo, Opeapea, HHFSpider, GDDGecko
+from animals import RiverDolphin, nenegoose, Ulae, Kikakapu, Pueo, Opeapea, HHFSpider, GDDGecko
 
 def release_animal(arboretum):
     animal = None
@@ -86,7 +86,7 @@ def release_animal(arboretum):
 
 
     if choice == "4":
-        animal == Kīkākapu()
+        animal == Kikakapu()
 
     if choice == "5":
         animal == Pueo()
