@@ -22,7 +22,7 @@ def release_animal(arboretum):
         # clear the terminal
         os.system("cls" if os.name == "nt" else "clear")
         if arboretum.rivers == [] and arboretum.coastlines == []:
-            # os.system("cls" if os.name == "nt" else "clear")
+            os.system("cls" if os.name == "nt" else "clear")
             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
             input("\n\nPress any key to continue...")
 
@@ -47,7 +47,7 @@ def release_animal(arboretum):
                     coast[0].add_animal(animal)
                 os.system("cls" if os.name == "nt" else "clear")
                 print(F'Success! The {animal.species} has been added to the biome!')
-                # input("\n\nPress any key to continue...")
+                input("\n\nPress any key to continue...")
             except: 
                 release_animal(arboretum)
 
@@ -61,8 +61,8 @@ def release_animal(arboretum):
         animal = GDDGecko()
         if arboretum.forests == []:
             os.system("cls" if os.name == "nt" else "clear")
-            print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
-            input("\n\nPress any key to continue...")
+            # print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
+            # input("\n\nPress any key to continue...")
         else: 
             for index, forest in enumerate(arboretum.forests):
                 print(f'{index + 1}. Forest ({len(forest.animals)} animals)')
