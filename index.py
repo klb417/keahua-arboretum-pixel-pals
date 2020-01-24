@@ -1,4 +1,6 @@
 import os
+from uuid import uuid1
+
 
 from arboretum import Arboretum
 from actions import (
@@ -16,9 +18,11 @@ from plants import (
     BlueJadeVine
 )
 
+from animals import (RiverDolphin, nenegoose, Ulae, Kīkākapu, Pueo, Opeapea, HHFSpider, GDDGecko)
+
+
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
-
 
 def build_menu():
     os.system("cls" if os.name == "nt" else "clear")
@@ -40,6 +44,7 @@ def main_menu():
 
     if choice == "1":
         annex_biome(keahua)
+
 
     if choice == "2":
         release_animal(keahua)

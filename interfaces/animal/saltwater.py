@@ -1,4 +1,4 @@
-# from .aquatic import IAquatic
+from ..habitat import IAquatic
 
 class ISaltwater(IAquatic):
 
