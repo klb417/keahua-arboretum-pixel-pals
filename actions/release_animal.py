@@ -19,6 +19,8 @@ def release_animal(arboretum):
         animal = RiverDolphin()
         if arboretum.rivers == []:
             print("Please go create a location for this animal.")
+            input("\n\nPress any key to continue...")
+
         else: 
             new_list = arboretum.rivers + arboretum.coastlines
             for index, place in enumerate(new_list):
