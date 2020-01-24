@@ -16,6 +16,7 @@ class Ulae(Animal, ISaltwater, Identifiable):
     def feed(self, prey):
         if prey in self.__prey:
             print(f"The 'Ulae ate {prey} for a meal")
+            input("Press any button to continue...")
         else:
             print(f"The 'Ulae rejects the {prey}")
 

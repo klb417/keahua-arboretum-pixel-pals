@@ -1,16 +1,13 @@
 import os
-from animals.river_dolphin import RiverDolphin
+from animals import RiverDolphin, GDDGecko, HHFSpider, Kikakapu, nenegoose, Opeapea, Pueo, Ulae
+# def feeding_animals(animal):
+#     os.system('cls' if os.name == 'nt' else 'clear')
+#     for index, prey in enumerate(animal.prey):
+#         print(f"{index + 1}. {prey}")
+#     print(f"What is on the menu for the {animal.species} today? >")
+#     choice = input("> ")
 
-def feeding_animals(animal):
-    my_prey_list = list(animal.prey)
-    os.system('cls' if os.name == 'nt' else 'clear')
-    for index, prey in enumerate(my_prey_list, 1):
-        print(f"{index}. {prey}")
-        print(my_prey_list)
-    choice = input(f"What is on the menu for the {animal.species} today? >")
-    print(choice, index, prey)
-    if choice == index:
-        animal.feed(prey)
+
 
 def feed_animal():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -23,30 +20,88 @@ def feed_animal():
     print("7. Ope'ape'a")
     print("8. Happy-Face Spider")
 
-    choice = input("Choose animal to feed. >")
+    print("Choose animal to feed.")
+    choice = input("> ")
 
     if choice == "1":
-        g_d_d_gecko = Gold_Dust_Day_Gecko()
-        pass
-    if choice == "2":
+        g_d_d_gecko = GDDGecko()
+        gddgprey = tuple(g_d_d_gecko.prey)
+        for index, prey in enumerate(gddgprey):
+            print(f"{index + 1}. {prey}")
+        print(f"What is on the menu for the Gold Dust Day Gecko today?")
+        choice = input("> ")
+
+        # print(choice, index, gddgprey)
+
+        g_d_d_gecko.feed(gddgprey[int(choice) - 1])
+        
+    elif choice == "2":
         river_dolphin = RiverDolphin()
-        feeding_animals(river_dolphin)
-    if choice == "3":
-        nene_goose = Nene_Goose()
-        pass
-    if choice == "4":
+        rvrdolprey = tuple(river_dolphin.prey)
+        for index, prey in enumerate(rvrdolprey):
+            print(f"{index + 1}. {prey}")
+        print(f"What is on the menu for the River Dolphin today?")
+        choice = input("> ")
+
+        river_dolphin.feed(rvrdolprey[int(choice) - 1])
+
+    elif choice == "3":
+        nene_goose = nenegoose()
+        neneprey = tuple(nene_goose.prey)
+        for index, prey in enumerate(neneprey):
+            print(f"{index + 1}. {prey}")
+        print(f"What is on the menu for the Nene Goose today?")
+        choice = input("> ")
+
+        nene_goose.feed(neneprey[int(choice) - 1])
+
+    elif choice == "4":
         kikakapu = Kikakapu()
-        pass
-    if choice == "5":
+        kikaprey = tuple(kikakapu.prey)
+        for index, prey in enumerate(kikaprey):
+            print(f"{index + 1}. {prey}")
+        print(f"What is on the menu for the Kikakapu today?")
+        choice = input("> ")
+
+        kikakapu.feed(kikaprey[int(choice) - 1])
+
+    elif choice == "5":
         pueo = Pueo()
-        pass
-    if choice == "6":
+        pueoprey = tuple(pueo.prey)
+        for index, prey in enumerate(pueoprey):
+            print(f"{index + 1}. {prey}")
+        print(f"What is on the menu for the Pueo today?")
+        choice = input("> ")
+
+        pueo.feed(pueoprey[int(choice) - 1])
+
+    elif choice == "6":
         ulae = Ulae()
-        pass
-    if choice == "7":
+        ulaeprey = tuple(ulae.prey)
+        for index, prey in enumerate(ulaeprey):
+            print(f"{index + 1}. {prey}")
+        print(f"What is on the menu for the 'Ulae today?")
+        choice = input("> ")
+
+        ulae.feed(ulaeprey[int(choice) - 1])
+
+    elif choice == "7":
         opeapea = Opeapea()
-        pass
-    if choice == "8":
-        hhfspider = Happy_Face_Spider()
-        pass
+        opeprey = tuple(opeapea.prey)
+        for index, prey in enumerate(opeprey):
+            print(f"{index + 1}. {prey}")
+        print(f"What is on the menu for the Ope'ape'a today?")
+        choice = input("> ")
+
+        opeapea.feed(opeprey[int(choice) - 1])
+
+    elif choice == "8":
+        hhfspider = HHFSpider()
+        hhfsprey = tuple(hhfspider.prey)
+        for index, prey in enumerate(hhfsprey):
+            print(f"{index + 1}. {prey}")
+        print(f"What is on the menu for the Happy-Face Spider today?")
+        choice = input("> ")
+
+        hhfspider.feed(hhfsprey[int(choice) - 1])
 
