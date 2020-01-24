@@ -63,3 +63,6 @@ class Plant(Identifiable):
             self.__required_locations.append(location)
         else:
             raise TypeError("location must be a string.")
+
+    def __str__(self):
+        return self.name
