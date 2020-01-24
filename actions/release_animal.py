@@ -94,6 +94,16 @@ def release_animal(arboretum):
 
     if choice == "6":
         animal = Ulae()
+        if arboretum.coastlines == []:
+            print("Please go create a location for this animal.")
+        else: 
+            for index, coastline in enumerate(arboretum.coastlines):
+                print(f'{index + 1}. Coastline {coastline.id}')
+            print("Release the animal into which biome?")
+
+            choice = input("> ")
+
+            arboretum.coastlines[int(choice) - 1].animals.append(animal)
 
     if choice == "7":
         animal = Opeapea()
