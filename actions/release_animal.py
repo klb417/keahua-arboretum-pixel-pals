@@ -22,7 +22,7 @@ def release_animal(arboretum):
         # clear the terminal
         os.system("cls" if os.name == "nt" else "clear")
         if arboretum.rivers == [] and arboretum.coastlines == []:
-            os.system("cls" if os.name == "nt" else "clear")
+            # os.system("cls" if os.name == "nt" else "clear")
             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
             input("\n\nPress any key to continue...")
 
@@ -33,8 +33,7 @@ def release_animal(arboretum):
                 print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
             print("Release the animal into which biome?")
             choice = input("> ")
-            def release_dolphin():
-                # capture the selection
+            try:
                 selection = new_list[int(choice) - 1].id
                 # search the river list for the selection
                 river = list(filter(lambda x: x.id == selection, arboretum.rivers))
@@ -48,18 +47,12 @@ def release_animal(arboretum):
                     coast[0].add_animal(animal)
                 os.system("cls" if os.name == "nt" else "clear")
                 print(F'Success! The {animal.species} has been added to the biome!')
-                input("\n\nPress any key to continue...")
-            try: 
-                release_dolphin()
+                # input("\n\nPress any key to continue...")
             except: 
-                print(f"Ooops! That doesn't seem to be an option. Please select one of the menu options.")
-                # release_dolphin()
-        # try:
-        #     release_dolphin()
-        # except:
-        #     os.system("cls" if os.name == "nt" else "clear")
-        #     print(f"Ooops! That doesn't seem to be an option. Please select one of the menu options.")
-        #     release_dolphin()
+                release_animal(arboretum)
+
+            # print(f"Ooops! That doesn't seem to be an option. Please select one of the menu options.")
+        
             
 
 
@@ -77,10 +70,14 @@ def release_animal(arboretum):
 
             choice = input("> ")
 
-            arboretum.forests[int(choice) - 1].animals.append(animal)
-            os.system("cls" if os.name == "nt" else "clear")
-            print(F'Success! The {animal.species} has been added to the biome!')
-            input("\n\nPress any key to continue...")
+            try:
+                arboretum.forests[int(choice) - 1].add_animal(animal)
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                # input("\n\nPress any key to continue...")
+            except: 
+                release_animal(arboretum)
+
 
 
 
@@ -98,10 +95,14 @@ def release_animal(arboretum):
 
             choice = input("> ")
 
-            arboretum.grasslands[int(choice) - 1].animals.append(animal)
-            os.system("cls" if os.name == "nt" else "clear")
-            print(F'Success! The {animal.species} has been added to the biome!')
-            input("\n\nPress any key to continue...")
+            try: 
+                arboretum.grasslands[int(choice) - 1].add_animal(animal)
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                # input("\n\nPress any key to continue...")
+            except: 
+                release_animal(arboretum)
+
 
 
 
@@ -119,17 +120,21 @@ def release_animal(arboretum):
                 print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
             print("Release the animal into which biome?")
             choice = input("> ")
-            selection = new_list[int(choice) - 1].id
-            swamp = list(filter(lambda x: x.id == selection, arboretum.swamps))
-            river = list(filter(lambda x: x.id == selection, arboretum.rivers))
+            try: 
+                selection = new_list[int(choice) - 1].id
+                swamp = list(filter(lambda x: x.id == selection, arboretum.swamps))
+                river = list(filter(lambda x: x.id == selection, arboretum.rivers))
 
-            if river != []:
-                river[0].add_animal(animal)
-            if swamp != []: 
-                swamp[0].add_animal(animal)
-            os.system("cls" if os.name == "nt" else "clear")
-            print(F'Success! The {animal.species} has been added to the biome!')
-            input("\n\nPress any key to continue...")
+                if river != []:
+                    river[0].add_animal(animal)
+                if swamp != []: 
+                    swamp[0].add_animal(animal)
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                # input("\n\nPress any key to continue...")
+            except: 
+                release_animal(arboretum)
+
 
     if choice == "5":
         os.system("cls" if os.name == "nt" else "clear")
@@ -145,17 +150,21 @@ def release_animal(arboretum):
                 print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
             print("Release the animal into which biome?")
             choice = input("> ")
-            selection = new_list[int(choice) - 1].id
-            forest = list(filter(lambda x: x.id == selection, arboretum.forests))
-            grassland = list(filter(lambda x: x.id == selection, arboretum.grasslands))
+            try: 
+                selection = new_list[int(choice) - 1].id
+                forest = list(filter(lambda x: x.id == selection, arboretum.forests))
+                grassland = list(filter(lambda x: x.id == selection, arboretum.grasslands))
 
-            if grassland != []:
-                grassland[0].add_animal(animal)
-            if forest != []: 
-                forest[0].add_animal(animal)
-            os.system("cls" if os.name == "nt" else "clear")
-            print(F'Success! The {animal.species} has been added to the biome!')
-            input("\n\nPress any key to continue...")
+                if grassland != []:
+                    grassland[0].add_animal(animal)
+                if forest != []: 
+                    forest[0].add_animal(animal)
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                # input("\n\nPress any key to continue...")
+            except: 
+                release_animal(arboretum)
+
 
 
     if choice == "6":
@@ -171,11 +180,14 @@ def release_animal(arboretum):
             print("Release the animal into which biome?")
 
             choice = input("> ")
+            try: 
+                arboretum.coastlines[int(choice) - 1].add_animal(animal)
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                # input("\n\nPress any key to continue...")
+            except: 
+                release_animal(arboretum)
 
-            arboretum.coastlines[int(choice) - 1].animals.append(animal)
-            os.system("cls" if os.name == "nt" else "clear")
-            print(F'Success! The {animal.species} has been added to the biome!')
-            input("\n\nPress any key to continue...")
 
     if choice == "7":
         os.system("cls" if os.name == "nt" else "clear")
@@ -191,17 +203,21 @@ def release_animal(arboretum):
                 print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
             print("Release the animal into which biome?")
             choice = input("> ")
-            selection = new_list[int(choice) - 1].id
-            forest = list(filter(lambda x: x.id == selection, arboretum.forests))
-            mountain = list(filter(lambda x: x.id == selection, arboretum.mountains))
+            try: 
+                selection = new_list[int(choice) - 1].id
+                forest = list(filter(lambda x: x.id == selection, arboretum.forests))
+                mountain = list(filter(lambda x: x.id == selection, arboretum.mountains))
 
-            if mountain != []:
-                mountain[0].add_animal(animal)
-            if forest != []: 
-                forest[0].add_animal(animal)
-            os.system("cls" if os.name == "nt" else "clear")
-            print(F'Success! The {animal.species} has been added to the biome!')
-            input("\n\nPress any key to continue...")
+                if mountain != []:
+                    mountain[0].add_animal(animal)
+                if forest != []: 
+                    forest[0].add_animal(animal)
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                # input("\n\nPress any key to continue...")
+            except: 
+                release_animal(arboretum)
+
 
     if choice == "8":
         os.system("cls" if os.name == "nt" else "clear")
@@ -216,9 +232,12 @@ def release_animal(arboretum):
             print("Release the animal into which biome?")
 
             choice = input("> ")
+            try:
+                arboretum.swamps[int(choice) - 1].add_animal(animal)
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                # input("\n\nPress any key to continue...")
+            except: 
+                release_animal(arboretum)
 
-            arboretum.swamps[int(choice) - 1].animals.append(animal)
-            os.system("cls" if os.name == "nt" else "clear")
-            print(F'Success! The {animal.species} has been added to the biome!')
-            input("\n\nPress any key to continue...")
 
