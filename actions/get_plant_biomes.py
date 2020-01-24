@@ -14,7 +14,7 @@ def get_plant_biomes(plant, arboretum):
     for biome in allowed_biomes:
         for key, value in all_biomes.items():
             if key == biome:
-                # add biomes to plant_biomes
+                # add biomes to plant_biomes list
                 plant_biomes.extend(all_biomes[key])
             
     return plant_biomes
