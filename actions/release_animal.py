@@ -1,8 +1,13 @@
+# Author: Lauren Riddle
+# Purpose: Holds the logic that creates a new animal and adds it to a biome
 from animals import RiverDolphin, nenegoose, Ulae, Kikakapu, Pueo, Opeapea, HHFSpider, GDDGecko
-
+import os
 def release_animal(arboretum):
     animal = None
+    # clears the screen
+    os.system("cls" if os.name == "nt" else "clear")
 
+    # creates the add animal menu
     print("1. River Dolphin")
     print("2. Gold Dust Day Gecko")
     print("3. Nene Goose")
@@ -17,146 +22,235 @@ def release_animal(arboretum):
 
     if choice == "1":
         animal = RiverDolphin()
+        # clear the terminal
+        os.system("cls" if os.name == "nt" else "clear")
         if arboretum.rivers == [] and arboretum.coastlines == []:
-            print("Please go create a location for this animal.")
-            input("\n\nPress any key to continue...")
+            # clear the screen and print an error
+            os.system("cls" if os.name == "nt" else "clear")
+            print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
+            input("\n\nPress enter to continue...")
 
         else: 
+            # combine the rivers and coastline lists
             new_list = arboretum.rivers + arboretum.coastlines
+            # loop over list and display in terminal
             for index, place in enumerate(new_list):
                 print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
             print("Release the animal into which biome?")
-            choice = input("> ")
-            selection = new_list[int(choice) - 1].id
-            river = list(filter(lambda x: x.id == selection, arboretum.rivers))
-            coast = list(filter(lambda x: x.id == selection, arboretum.coastlines))
-            if river != []:
-                river[0].add_animal(animal)
-            elif coast != []: 
-                coast[0].add_animal(animal)
+            choice1 = input("> ")
+            try:
+                selection = new_list[int(choice1) - 1].id
+                # search the river list for the selection
+                river = list(filter(lambda x: x.id == selection, arboretum.rivers))
+                # search the coast list for the selection
+                coast = list(filter(lambda x: x.id == selection, arboretum.coastlines))
+                if river != []:
+                    # add the animal to the river that was found in the search
+                    river[0].add_animal(animal)
+                elif coast != []: 
+                    # add the animal to the river that was found in the search
+                    coast[0].add_animal(animal)
+                    # clear screen and print success message
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                input("\n\nPress enter to continue...")
+            except: 
+                # re-load the release animal function if the user enters a choice that is not on the list
+                release_animal(arboretum)
+        
+            
 
 
     if choice == "2":
+        os.system("cls" if os.name == "nt" else "clear")
         animal = GDDGecko()
         if arboretum.forests == []:
-            print("Please go create a location for this animal.")
+            # clear the screen and print an error
+            os.system("cls" if os.name == "nt" else "clear")
+            print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
+            input("\n\nPress enter to continue...")
         else: 
+            # loop over the biomes and display them in terminal
             for index, forest in enumerate(arboretum.forests):
                 print(f'{index + 1}. Forest ({len(forest.animals)} animals)')
             print("Release the animal into which biome?")
 
-            choice = input("> ")
+            choice2 = input("> ")
 
-            arboretum.forests[int(choice) - 1].animals.append(animal)
+            try:
+                # append the animal to the biome list
+                arboretum.forests[int(choice2) - 1].add_animal(animal)
+                 # clear screen and print success message
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                input("\n\nPress enter to continue...")
+            except: 
+                release_animal(arboretum)
 
 
 
 
     if choice == "3":
+        os.system("cls" if os.name == "nt" else "clear")
         animal = nenegoose()
         if arboretum.grasslands == []:
-            print("Please go create a location for this animal.")
+            # clear the screen and print an error
+            os.system("cls" if os.name == "nt" else "clear")
+            print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
+            input("\n\nPress enter to continue...")
         else: 
+            # loop over the biomes and display them in terminal
             for index, grassland in enumerate(arboretum.grasslands):
                 print(f'{index + 1}. Grassland ({len(grassland.animals)} animals)')
             print("Release the animal into which biome?")
 
-            choice = input("> ")
+            choice3 = input("> ")
 
-            arboretum.grasslands[int(choice) - 1].animals.append(animal)
+            try: 
+                # append the animal to the biome list
+                arboretum.grasslands[int(choice3) - 1].add_animal(animal)
+                # clear screen and print success message
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                input("\n\nPress enter to continue...")
+            except: 
+                release_animal(arboretum)
 
 
 
 
     if choice == "4":
+        os.system("cls" if os.name == "nt" else "clear")
         animal = Kikakapu()
         if arboretum.rivers == [] and arboretum.swamps == []:
-            print("Please go create a location for this animal.")
-            input("\n\nPress any key to continue...")
+            os.system("cls" if os.name == "nt" else "clear")
+            print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
+            input("\n\nPress enter to continue...")
 
         else: 
             new_list = arboretum.rivers + arboretum.swamps
             for index, place in enumerate(new_list):
                 print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
             print("Release the animal into which biome?")
-            choice = input("> ")
-            selection = new_list[int(choice) - 1].id
-            swamp = list(filter(lambda x: x.id == selection, arboretum.swamps))
-            river = list(filter(lambda x: x.id == selection, arboretum.rivers))
+            choice4 = input("> ")
+            try: 
+                selection = new_list[int(choice4) - 1].id
+                swamp = list(filter(lambda x: x.id == selection, arboretum.swamps))
+                river = list(filter(lambda x: x.id == selection, arboretum.rivers))
 
-            if river != []:
-                river[0].add_animal(animal)
-            if swamp != []: 
-                swamp[0].add_animal(animal)
+                if river != []:
+                    river[0].add_animal(animal)
+                if swamp != []: 
+                    swamp[0].add_animal(animal)
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                input("\n\nPress enter to continue...")
+            except: 
+                release_animal(arboretum)
+
 
     if choice == "5":
+        os.system("cls" if os.name == "nt" else "clear")
         animal = Pueo()
         if arboretum.grasslands == [] and arboretum.forests == []:
-            print("Please go create a location for this animal.")
-            input("\n\nPress any key to continue...")
+            os.system("cls" if os.name == "nt" else "clear")
+            print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
+            input("\n\nPress enter to continue...")
 
         else: 
             new_list = arboretum.grasslands + arboretum.forests
             for index, place in enumerate(new_list):
                 print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
             print("Release the animal into which biome?")
-            choice = input("> ")
-            selection = new_list[int(choice) - 1].id
-            forest = list(filter(lambda x: x.id == selection, arboretum.forests))
-            grassland = list(filter(lambda x: x.id == selection, arboretum.grasslands))
+            choice5 = input("> ")
+            try: 
+                selection = new_list[int(choice5) - 1].id
+                forest = list(filter(lambda x: x.id == selection, arboretum.forests))
+                grassland = list(filter(lambda x: x.id == selection, arboretum.grasslands))
 
-            if grassland != []:
-                grassland[0].add_animal(animal)
-            if forest != []: 
-                forest[0].add_animal(animal)
+                if grassland != []:
+                    grassland[0].add_animal(animal)
+                if forest != []: 
+                    forest[0].add_animal(animal)
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                input("\n\nPress enter to continue...")
+            except: 
+                release_animal(arboretum)
 
 
 
     if choice == "6":
+        os.system("cls" if os.name == "nt" else "clear")
         animal = Ulae()
         if arboretum.coastlines == []:
-            print("Please go create a location for this animal.")
+            os.system("cls" if os.name == "nt" else "clear")
+            print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
+            input("\n\nPress enter to continue...")
         else: 
             for index, coastline in enumerate(arboretum.coastlines):
                 print(f'{index + 1}. Coastline ({len(coastline.animals)} animals)')
             print("Release the animal into which biome?")
 
-            choice = input("> ")
+            choice6 = input("> ")
+            try: 
+                arboretum.coastlines[int(choice6) - 1].add_animal(animal)
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                input("\n\nPress enter to continue...")
+            except: 
+                release_animal(arboretum)
 
-            arboretum.coastlines[int(choice) - 1].animals.append(animal)
 
     if choice == "7":
+        os.system("cls" if os.name == "nt" else "clear")
         animal = Opeapea()
         if arboretum.mountains == [] and arboretum.forests == []:
-            print("Please go create a location for this animal.")
-            input("\n\nPress any key to continue...")
+            os.system("cls" if os.name == "nt" else "clear")
+            print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
+            input("\n\nPress enter to continue...")
 
         else: 
             new_list = arboretum.mountains + arboretum.forests
             for index, place in enumerate(new_list):
                 print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
             print("Release the animal into which biome?")
-            choice = input("> ")
-            selection = new_list[int(choice) - 1].id
-            forest = list(filter(lambda x: x.id == selection, arboretum.forests))
-            mountain = list(filter(lambda x: x.id == selection, arboretum.mountains))
+            choice7 = input("> ")
+            try: 
+                selection = new_list[int(choice7) - 1].id
+                forest = list(filter(lambda x: x.id == selection, arboretum.forests))
+                mountain = list(filter(lambda x: x.id == selection, arboretum.mountains))
 
-            if mountain != []:
-                mountain[0].add_animal(animal)
-            if forest != []: 
-                forest[0].add_animal(animal)
-        
+                if mountain != []:
+                    mountain[0].add_animal(animal)
+                if forest != []: 
+                    forest[0].add_animal(animal)
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                input("\n\nPress enter to continue...")
+            except: 
+                release_animal(arboretum)
+
+
     if choice == "8":
+        os.system("cls" if os.name == "nt" else "clear")
         animal = HHFSpider()
         if arboretum.swamps == []:
-            print("Please go create a location for this animal.")
+            os.system("cls" if os.name == "nt" else "clear")
+            print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
+            input("\n\nPress enter to continue...")
         else: 
             for index, swamp in enumerate(arboretum.swamps):
                 print(f'{index + 1}. Swamp ({len(swamp.animals)} animals)')
             print("Release the animal into which biome?")
 
-            choice = input("> ")
-
-            arboretum.swamps[int(choice) - 1].animals.append(animal)
+            choice8 = input("> ")
+            try:
+                arboretum.swamps[int(choice8) - 1].add_animal(animal)
+                os.system("cls" if os.name == "nt" else "clear")
+                print(F'Success! The {animal.species} has been added to the biome!')
+                input("\n\nPress enter to continue...")
+            except: 
+                release_animal(arboretum)
 
 
