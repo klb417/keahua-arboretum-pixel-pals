@@ -1,27 +1,21 @@
 ![Keahua Landscape](./keahua.jpeg)
 
-# Before You Start
+# Keahua Arboretum
 
 Welcome to the Keahua Arboretum!
-
-1. Everyone clone the repository
-1. `cd` to the project directory
-1. Run the command `pip install -r requirements.txt`
-1. Run the command `python index.py` to start your application _(do not use AREPL for this project)_
-
-## Guidelines
-
-* You will not learn anything in this group project if you don't communicate well with each other.
-* You will not get anything done if you don't communicate well with each other.
-* Collaboration is key in this project. Working solo will get you nowhere.
-* Showing up late, extended lunches, going home early and leaving your team stranded will get you pulled off the team.
-* Create [pull request and issue ticket templates](https://help.github.com/en/articles/about-issue-and-pull-request-templates) for your team.
-
-# Keahua Arboretum
 
 You and your friends have decided to connect with the earth again and abandon your reliance on technology and urban vices. You have decided to move to Hawaii and join the land management team for the Keahua Arboretum.
 
 You have met with other foresters and land managers and have decided on the animals and plants below to focus on growing and maintaining for the arboretum.
+
+
+## Cloning down the repository and starting the application
+
+1. Clone this repository
+1. `cd` to the project directory
+1. Run the command `pip install -r requirements.txt`
+1. Run the command `python index.py` to start your application
+
 
 ## Biomes
 
@@ -51,15 +45,10 @@ This is a list of animals that you and your teammates are in charge of raising, 
 |**Seeds Produced**| 8 | 22 | 17 | 0 |
 |**Insecticide Resistance**| Low | High | High | Medium |
 
-## Keahua Inventory and Land Lifeline Electronic Repository (KILLER)
-
-Fancy web applications are so 2018. Command line applications provide a much more hands-on, personal, bespoke, artisinal experience when managing an arboretum like Keahua. Therefore, even though you are casting off your digital personas to lead a life connected with the land, you still want to use your hard-earned skills as developers to make management of the land as efficient as possible.
-
-Here are the main features that the application must be able to perform.
 
 ### Main Menu
 
-When the user first executes KILLER, they should be welcomed to the system and be presented with the following menu.
+When the user first executes KILLER (Keahua Inventory and Land Lifeline Electronic Repository), they should be welcomed to the system and be presented with the following menu.
 
 ```sh
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+

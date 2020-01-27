@@ -54,7 +54,10 @@ def main_menu():
     Arguments: None
     """
     build_menu()
-    choice = input("\nPlease select an option from the menu. >  ")
+    choice = input('''
+Choose a KILLER option.
+> 
+    ''')
 
     if choice == "1":
         annex_biome(keahua)
