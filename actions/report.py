@@ -1,4 +1,11 @@
+import os
+
 def build_facility_report(arboretum):
+    os.system("cls" if os.name == "nt" else "clear")
+    print(''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
+ 
     biomes = ["coastlines", "forests", "grasslands", "mountains", "rivers", "swamps"]
     for biome_name in biomes:
         for arboretum_biome in arboretum.biomes[biome_name]:
