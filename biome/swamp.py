@@ -20,6 +20,7 @@ class Swamp(IContainsAnimals, IContainsPlants, Identifiable, Biome):
             
         else:
             print("Biome is full, choose another biome")
+            input("Press ENTER to continue")
 
     def add_plant(self, plant):
         if not self.is_plants_full():
@@ -27,3 +28,4 @@ class Swamp(IContainsAnimals, IContainsPlants, Identifiable, Biome):
             
         else:
             print("Biome is full, choose another biome")
+            input("Press ENTER to continue")
