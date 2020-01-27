@@ -14,6 +14,10 @@ class Ulae(Animal, ISaltwater, Identifiable):
         return self.__prey
 
     def feed(self, prey):
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         if prey in self.__prey:
             print(f"The 'Ulae ate {prey} for a meal")
             input("Press any button to continue...")

@@ -24,21 +24,26 @@ def feed_animal():
     print("8. Happy-Face Spider")
 
     print("\nChoose animal to feed.")
-    choice = input("> ")
+    choice = input('''Type M to return to the main menu.
+    
+> ''')
 
+    if choice.lower() == "m":
+        return
 # once a number is chosen the program will go through this if else statement to find the number that was
-    if choice == "1":
+    elif choice == "1":
         #once the number is found it will run the animal selected
         g_d_d_gecko = GDDGecko()
         # I set up a variable for the prey of the animal specifically
         gddgprey = tuple(g_d_d_gecko.prey)
+        os.system('cls' if os.name == 'nt' else 'clear')
         print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         # this for loop goes through the prey and print it with a number that is the index +1 using the enumerate method
         for index, prey in enumerate(gddgprey):
             print(f"{index + 1}. {prey}")
-        print(f"What is on the menu for the Gold Dust Day Gecko today?")
+        print(f"\nWhat is on the menu for the Gold Dust Day Gecko today?\n")
         # a question is presented to the user then a variable is created for the choice of the input
         choice = input("> ")
 
@@ -48,6 +53,7 @@ def feed_animal():
             # assuming the user selects a valid number the program excutes the feed method for the animal. Since we added 1 to the index we need to make sure to take it away again.
             g_d_d_gecko.feed(gddgprey[int(choice) - 1])
         except:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
@@ -60,16 +66,18 @@ def feed_animal():
     elif choice == "2":
         river_dolphin = RiverDolphin()
         rvrdolprey = tuple(river_dolphin.prey)
+        os.system('cls' if os.name == 'nt' else 'clear')
         print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         for index, prey in enumerate(rvrdolprey):
             print(f"{index + 1}. {prey}")
-        print(f"What is on the menu for the River Dolphin today?")
+        print(f"\nWhat is on the menu for the River Dolphin today?\n")
         choice = input("> ")
         try:
             river_dolphin.feed(rvrdolprey[int(choice) - 1])
         except:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
@@ -80,16 +88,18 @@ def feed_animal():
     elif choice == "3":
         nene_goose = nenegoose()
         neneprey = tuple(nene_goose.prey)
+        os.system('cls' if os.name == 'nt' else 'clear')
         print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         for index, prey in enumerate(neneprey):
             print(f"{index + 1}. {prey}")
-        print(f"What is on the menu for the Nene Goose today?")
+        print(f"\nWhat is on the menu for the Nene Goose today?\n")
         choice = input("> ")
         try:
             nene_goose.feed(neneprey[int(choice) - 1])
         except:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
@@ -100,16 +110,18 @@ def feed_animal():
     elif choice == "4":
         kikakapu = Kikakapu()
         kikaprey = tuple(kikakapu.prey)
+        os.system('cls' if os.name == 'nt' else 'clear')
         print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         for index, prey in enumerate(kikaprey):
             print(f"{index + 1}. {prey}")
-        print(f"What is on the menu for the Kikakapu today?")
+        print(f"\nWhat is on the menu for the Kikakapu today?\n")
         choice = input("> ")
         try:
             kikakapu.feed(kikaprey[int(choice) - 1])
         except:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
@@ -120,16 +132,18 @@ def feed_animal():
     elif choice == "5":
         pueo = Pueo()
         pueoprey = tuple(pueo.prey)
+        os.system('cls' if os.name == 'nt' else 'clear')
         print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         for index, prey in enumerate(pueoprey):
             print(f"{index + 1}. {prey}")
-        print(f"What is on the menu for the Pueo today?")
+        print(f"\nWhat is on the menu for the Pueo today?\n")
         choice = input("> ")
         try:
             pueo.feed(pueoprey[int(choice) - 1])
         except:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
@@ -141,16 +155,18 @@ def feed_animal():
     elif choice == "6":
         ulae = Ulae()
         ulaeprey = tuple(ulae.prey)
+        os.system('cls' if os.name == 'nt' else 'clear')
         print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         for index, prey in enumerate(ulaeprey):
             print(f"{index + 1}. {prey}")
-        print(f"What is on the menu for the 'Ulae today?")
+        print(f"\nWhat is on the menu for the 'Ulae today?\n")
         choice = input("> ")
         try:
             ulae.feed(ulaeprey[int(choice) - 1])
         except:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
@@ -161,16 +177,18 @@ def feed_animal():
     elif choice == "7":
         opeapea = Opeapea()
         opeprey = tuple(opeapea.prey)
+        os.system('cls' if os.name == 'nt' else 'clear')
         print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         for index, prey in enumerate(opeprey):
             print(f"{index + 1}. {prey}")
-        print(f"What is on the menu for the Ope'ape'a today?")
+        print(f"\nWhat is on the menu for the Ope'ape'a today?\n")
         choice = input("> ")
         try:
             opeapea.feed(opeprey[int(choice) - 1])
         except:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
@@ -181,16 +199,18 @@ def feed_animal():
     elif choice == "8":
         hhfspider = HHFSpider()
         hhfsprey = tuple(hhfspider.prey)
+        os.system('cls' if os.name == 'nt' else 'clear')
         print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         for index, prey in enumerate(hhfsprey):
             print(f"{index + 1}. {prey}")
-        print(f"What is on the menu for the Happy-Face Spider today?")
+        print(f"\nWhat is on the menu for the Happy-Face Spider today?\n")
         choice = input("> ")
         try:
             hhfspider.feed(hhfsprey[int(choice) - 1])
         except:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
@@ -199,6 +219,7 @@ def feed_animal():
             return feed_animal()
 
     else:
+        os.system('cls' if os.name == 'nt' else 'clear')
         print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
