@@ -16,7 +16,9 @@ def show_plant_biomes(plant, biome_list):
     if biome_list:
         print('Cultivate Plant \n \n')
         for index, biome in enumerate(biome_list):
-            print(f'{index + 1}. {biome.name} ( plants)')
+            # Example menu:     1. Forest (0 plants)
+            #                   2. Forest (2 plants)
+            print(f'{index + 1}. {biome.name} ({len(biome.plants)} plants)')
         
         choice = input(f'''\nWhere would you like to cultivate the {plant.species}?
 Type M to return to the main menu. > ''')
