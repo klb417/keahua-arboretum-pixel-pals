@@ -9,12 +9,16 @@ def get_plant_biomes(plant, arboretum):
     '''
     plant_biomes = []
 
-    allowed_biomes = plant.required_locations
+    required_biomes = plant.required_locations
     all_biomes = arboretum.biomes
-    for biome in allowed_biomes:
-        for key, value in all_biomes.items():
-            if key == biome:
-                # add biomes to plant_biomes list
-                plant_biomes.extend(all_biomes[key])
+    for required_biome in required_biomes:
+        for potential_biome, value in all_biomes.items():
+            # if the biome in the arboretum is in required biomes of given plant
+            if potential_biome == required_biome:
+                for biome in all_biomes[potential_biome]:
+                    # check each biome to make sure it is not full
+                    if not biome.is_plants_full():
+                        # add biomes to plant_biomes list
+                        plant_biomes.append(biome)
             
     return plant_biomes

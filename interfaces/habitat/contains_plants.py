@@ -11,5 +11,5 @@ class IContainsPlants:
     def maximum_plants(self):
         return self.__maximum_plants
 
-    def is_plants_full():
+    def is_plants_full(self):
         return len(self.plants) >= self.__maximum_plants
