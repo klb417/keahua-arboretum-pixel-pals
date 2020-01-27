@@ -6,8 +6,8 @@ from .biome import Biome
 class Mountain(IContainsAnimals, IContainsPlants, Identifiable, Biome):
 
     def __init__(self, name):
-        IContainsAnimals.__init__(self)
-        IContainsPlants.__init__(self)
+        IContainsAnimals.__init__(self, 6)
+        IContainsPlants.__init__(self, 4)
         Identifiable.__init__(self)
         Biome.__init__(self, name)
 

@@ -9,7 +9,7 @@ from .biome import Biome
 
 class River(IContainsAnimals, IContainsPlants, Identifiable, Biome):
     def __init__(self, name):
-        IContainsAnimals.__init__(self, 1)
+        IContainsAnimals.__init__(self, 12)
         IContainsPlants.__init__(self, 6)
         Identifiable.__init__(self)
         Biome.__init__(self, name)

@@ -12,8 +12,16 @@ class Coastline(IContainsAnimals, IContainsPlants, Identifiable, Biome):
         Biome.__init__(self, name)
 
     def add_animal(self, animal):
-        # Add in checks for animal type
-        self.animals.append(animal)
+        if self.is_animals_not_full():
+            try:
+                if animal.aquatic and animal.cell_type == "hypotonic":
+                    self.animals.append(animal)
+            except AttributeError:
+                raise AttributeError(
+                    "Cannot add non-aquatic, or freshwater animals to a coastline"
+                )
+        else:
+            print("Choose another biome")
 
     def add_plant(self, plant):
         # Add in checks for plant type
