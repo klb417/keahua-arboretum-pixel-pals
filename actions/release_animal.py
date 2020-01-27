@@ -66,7 +66,9 @@ Type M to return to the main menu.
                 for index, place in enumerate(new_list):
                     print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
                 print("\nRelease the animal into which habitat?\n")
-                choice1 = input("Type M to return to the main menu. > ")
+                choice1 = input('''Type M to return to the main menu.
+                 
+> ''')
                 if choice1.lower() == "m":
                     return
                 try:
