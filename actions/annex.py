@@ -19,7 +19,7 @@ def annex_biome(arboretum):
     # Capturing user input and assigning it to "choice" variable
     choice = input("Choose biome to annex > ")
 
-    # if statements check user input, when it evaluates to true the selected biome list is appended in arboretum dictionary
+    # if statements check user input, when one evaluates to true the selected biome list is appended in arboretum dictionary
     if choice == "1":
         mountain = Mountain("Mountain")
         arboretum.mountains.append(mountain)
