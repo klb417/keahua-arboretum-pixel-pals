@@ -21,6 +21,7 @@ class River(IContainsAnimals, IContainsPlants, Identifiable, Biome):
             print("Biome is full, choose another biome")
             input("Press ENTER to continue")
 
+# Method to check if the biome is full. If it isn't full, the plant is added to the biome with .append. Otherwise an error message is displayed with a prompt to press the enter key to continue.
     def add_plant(self, plant):
         if not self.is_plants_full():
             self.plants.append(plant)
