@@ -14,8 +14,8 @@ class Swamp(IContainsAnimals, IContainsPlants, Identifiable, Biome):
 # Method to check if the biome is full. If it isn't full, the animal is added to the biome with .append. Otherwise an error message is displayed with a prompt to press the enter key to continue.
     def add_animal(self, animal):
         if not self.is_animals_full():
-            self.animals.append(animal)
-            
+            self.add_animal_to_list(animal)
+
         else:
             print("Biome is full, choose another biome")
             input("Press ENTER to continue")
@@ -23,8 +23,8 @@ class Swamp(IContainsAnimals, IContainsPlants, Identifiable, Biome):
 # Method to check if the biome is full. If it isn't full, the plant is added to the biome with .append. Otherwise an error message is displayed with a prompt to press the enter key to continue.
     def add_plant(self, plant):
         if not self.is_plants_full():
-            self.plants.append(plant)
-            
+            self.add_plant_to_list(plant)
+
         else:
             print("Biome is full, choose another biome")
             input("Press ENTER to continue")
