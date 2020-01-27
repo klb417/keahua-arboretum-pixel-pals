@@ -59,9 +59,13 @@ Type M to return to the main menu.
 
             if new_list != []:
             # loop over list and display in terminal
+                # Printing the header
+                print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                 for index, place in enumerate(new_list):
                     print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
-                print("Release the animal into which biome?")
+                print("\nRelease the animal into which habitat?\n")
                 choice1 = input("> ")
                 try:
                     selection = new_list[int(choice1) - 1].id
@@ -77,6 +81,10 @@ Type M to return to the main menu.
                         coast[0].add_animal(animal)
                         # clear screen and print success message
                     os.system("cls" if os.name == "nt" else "clear")
+                    # Printing the header
+                    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                     print(F'Success! The {animal.species} has been added to the biome!')
                     input("\n\nPress enter to continue...")
                 except: 
@@ -84,7 +92,7 @@ Type M to return to the main menu.
                     release_animal(arboretum)
             else:
                 # print this if there are biomes created but they are all full
-                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Biome for this animal to live in.")
+                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Habitat for this animal to live in.")
                 input("\n\nPress enter to continue...")
 
             
@@ -110,9 +118,13 @@ Type M to return to the main menu.
                     gecko_habitats.append(forest)
             if gecko_habitats != []:
                 # loop over the biomes and display them in terminal
+                # Printing the header
+                print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                 for index, forest in enumerate(gecko_habitats):
                     print(f'{index + 1}. Forest ({forest.current_animals} animals)')
-                print("Release the animal into which biome?")
+                print("\nRelease the animal into which habitat?\n")
 
                 choice2 = input("> ")
 
@@ -126,13 +138,17 @@ Type M to return to the main menu.
                     forest[0].add_animal(animal)
                     # clear screen and print success message
                     os.system("cls" if os.name == "nt" else "clear")
+                    # Printing the header
+                    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                     print(F'Success! The {animal.species} has been added to the biome!')
                     input("\n\nPress enter to continue...")
                 except: 
                     release_animal(arboretum)
             else: 
                 # print this if there are biomes created but they are all full
-                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Biome for this animal to live in.")
+                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Habitat for this animal to live in.")
                 input("\n\nPress enter to continue...")
 
 
@@ -157,9 +173,13 @@ Type M to return to the main menu.
                     nenegoose_habitats.append(land)
             if nenegoose_habitats != []:
                 # loop over the biomes and display them in terminal
+                # Printing the header
+                print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                 for index, grassland in enumerate(nenegoose_habitats):
                     print(f'{index + 1}. Grassland ({grassland.current_animals} animals)')
-                print("Release the animal into which biome?")
+                print("\nRelease the animal into which habitat?\n")
 
                 choice3 = input("> ")
 
@@ -172,13 +192,17 @@ Type M to return to the main menu.
                     land[0].add_animal(animal)
                     # clear screen and print success message
                     os.system("cls" if os.name == "nt" else "clear")
-                    print(F'Success! The {animal.species} has been added to the biome!')
+                    # Printing the header
+                    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
+                    print(F'Success! The {animal.species} has been added to the habitat!')
                     input("\n\nPress enter to continue...")
                 except: 
                     release_animal(arboretum)
             else: 
                 # print this if there are biomes created but they are all full
-                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Biome for this animal to live in.")
+                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Habitat for this animal to live in.")
                 input("\n\nPress enter to continue...")
 
 
@@ -205,9 +229,13 @@ Type M to return to the main menu.
                 if swamp.is_animals_full() == False:
                     Kikakapu_habitats.append(swamp)
             if Kikakapu_habitats != []:
+                # Printing the header
+                print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                 for index, place in enumerate(Kikakapu_habitats):
                     print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
-                print("Release the animal into which biome?")
+                print("\nRelease the animal into which habitat?\n")
                 choice4 = input("> ")
                 try: 
                     selection = Kikakapu_habitats[int(choice4) - 1].id
@@ -219,13 +247,17 @@ Type M to return to the main menu.
                     if swamp != []: 
                         swamp[0].add_animal(animal)
                     os.system("cls" if os.name == "nt" else "clear")
+                    # Printing the header
+                    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                     print(F'Success! The {animal.species} has been added to the biome!')
                     input("\n\nPress enter to continue...")
                 except: 
                     release_animal(arboretum)
             else: 
                 # print this if there are biomes created but they are all full
-                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Biome for this animal to live in.")
+                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Habitat for this animal to live in.")
                 input("\n\nPress enter to continue...")
 
 
@@ -250,9 +282,13 @@ Type M to return to the main menu.
                 if forest.is_animals_full() == False:
                     pueo_habitats.append(forest)
             if pueo_habitats != []:
+                # Printing the header
+                print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                 for index, place in enumerate(pueo_habitats):
                     print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
-                print("Release the animal into which biome?")
+                print("\nRelease the animal into which habitat?\n")
                 choice5 = input("> ")
                 try: 
                     selection = pueo_habitats[int(choice5) - 1].id
@@ -264,13 +300,17 @@ Type M to return to the main menu.
                     if forest != []: 
                         forest[0].add_animal(animal)
                     os.system("cls" if os.name == "nt" else "clear")
+                    # Printing the header
+                    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                     print(F'Success! The {animal.species} has been added to the biome!')
                     input("\n\nPress enter to continue...")
                 except: 
                     release_animal(arboretum)
             else: 
                 # print this if there are biomes created but they are all full
-                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Biome for this animal to live in.")
+                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Habitat for this animal to live in.")
                 input("\n\nPress enter to continue...")
 
 
@@ -291,9 +331,13 @@ Type M to return to the main menu.
                 if coast.is_animals_full() == False:
                     ulae_habitats.append(coast)
             if ulae_habitats != []:
+                # Printing the header
+                print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                 for index, coastline in enumerate(ulae_habitats):
                     print(f'{index + 1}. Coastline ({coastline.current_animals} animals)')
-                print("Release the animal into which biome?")
+                print("\nRelease the animal into which habitat?\n")
 
                 choice6 = input("> ")
                 try: 
@@ -303,13 +347,17 @@ Type M to return to the main menu.
 
                     coast[0].add_animal(animal)
                     os.system("cls" if os.name == "nt" else "clear")
+                    # Printing the header
+                    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                     print(F'Success! The {animal.species} has been added to the biome!')
                     input("\n\nPress enter to continue...")
                 except: 
                     release_animal(arboretum)
             else: 
                 # print this if there are biomes created but they are all full
-                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Biome for this animal to live in.")
+                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Habitat for this animal to live in.")
                 input("\n\nPress enter to continue...")
 
     if choice == "7":
@@ -333,9 +381,13 @@ Type M to return to the main menu.
                 if forest.is_animals_full() == False:
                     Opeapea_habitats.append(forest)
             if Opeapea_habitats != []:
+                # Printing the header
+                print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                 for index, place in enumerate(Opeapea_habitats):
                     print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
-                print("Release the animal into which biome?")
+                print("\nRelease the animal into which habitat?\n")
                 choice7 = input("> ")
                 try: 
                     selection = Opeapea_habitats[int(choice7) - 1].id
@@ -347,13 +399,17 @@ Type M to return to the main menu.
                     if forest != []: 
                         forest[0].add_animal(animal)
                     os.system("cls" if os.name == "nt" else "clear")
+                    # Printing the header
+                    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                     print(F'Success! The {animal.species} has been added to the biome!')
                     input("\n\nPress enter to continue...")
                 except: 
                     release_animal(arboretum)
             else: 
                 # print this if there are biomes created but they are all full
-                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Biome for this animal to live in.")
+                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Habitat for this animal to live in.")
                 input("\n\nPress enter to continue...")
 
     if choice == "8":
@@ -373,10 +429,13 @@ Type M to return to the main menu.
                 if swamp.is_animals_full() == False:
                     spider_habitats.append(swamp)
             if spider_habitats != []:
-
+                # Printing the header
+                print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                 for index, swamp in enumerate(spider_habitats):
                     print(f'{index + 1}. Swamp ({swamp.current_animals} animals)')
-                print("Release the animal into which biome?")
+                print("\nRelease the animal into which habitat?\n")
 
                 choice8 = input("> ")
                 try:
@@ -386,13 +445,17 @@ Type M to return to the main menu.
 
                     swamp[0].add_animal(animal)
                     os.system("cls" if os.name == "nt" else "clear")
+                    # Printing the header
+                    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                     print(F'Success! The {animal.species} has been added to the biome!')
                     input("\n\nPress enter to continue...")
                 except: 
                     release_animal(arboretum)
             else: 
                 # print this if there are biomes created but they are all full
-                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Biome for this animal to live in.")
+                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Habitat for this animal to live in.")
                 input("\n\nPress enter to continue...")
 
 
