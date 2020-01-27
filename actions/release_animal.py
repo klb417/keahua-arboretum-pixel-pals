@@ -1,10 +1,13 @@
+# Author: Lauren Riddle
+# Purpose: Holds the logic that creates a new animal and adds it to a biome
 from animals import RiverDolphin, nenegoose, Ulae, Kikakapu, Pueo, Opeapea, HHFSpider, GDDGecko
 import os
 def release_animal(arboretum):
     animal = None
+    # clears the screen
     os.system("cls" if os.name == "nt" else "clear")
 
-
+    # creates the add animal menu
     print("1. River Dolphin")
     print("2. Gold Dust Day Gecko")
     print("3. Nene Goose")
@@ -22,6 +25,7 @@ def release_animal(arboretum):
         # clear the terminal
         os.system("cls" if os.name == "nt" else "clear")
         if arboretum.rivers == [] and arboretum.coastlines == []:
+            # clear the screen and print an error
             os.system("cls" if os.name == "nt" else "clear")
             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
             input("\n\nPress enter to continue...")
@@ -29,6 +33,7 @@ def release_animal(arboretum):
         else: 
             # combine the rivers and coastline lists
             new_list = arboretum.rivers + arboretum.coastlines
+            # loop over list and display in terminal
             for index, place in enumerate(new_list):
                 print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
             print("Release the animal into which biome?")
@@ -45,13 +50,13 @@ def release_animal(arboretum):
                 elif coast != []: 
                     # add the animal to the river that was found in the search
                     coast[0].add_animal(animal)
+                    # clear screen and print success message
                 os.system("cls" if os.name == "nt" else "clear")
                 print(F'Success! The {animal.species} has been added to the biome!')
                 input("\n\nPress enter to continue...")
             except: 
+                # re-load the release animal function if the user enters a choice that is not on the list
                 release_animal(arboretum)
-
-            # print(f"Ooops! That doesn't seem to be an option. Please select one of the menu options.")
         
             
 
@@ -60,10 +65,12 @@ def release_animal(arboretum):
         os.system("cls" if os.name == "nt" else "clear")
         animal = GDDGecko()
         if arboretum.forests == []:
+            # clear the screen and print an error
             os.system("cls" if os.name == "nt" else "clear")
             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
             input("\n\nPress enter to continue...")
         else: 
+            # loop over the biomes and display them in terminal
             for index, forest in enumerate(arboretum.forests):
                 print(f'{index + 1}. Forest ({len(forest.animals)} animals)')
             print("Release the animal into which biome?")
@@ -71,7 +78,9 @@ def release_animal(arboretum):
             choice2 = input("> ")
 
             try:
+                # append the animal to the biome list
                 arboretum.forests[int(choice2) - 1].add_animal(animal)
+                 # clear screen and print success message
                 os.system("cls" if os.name == "nt" else "clear")
                 print(F'Success! The {animal.species} has been added to the biome!')
                 input("\n\nPress enter to continue...")
@@ -85,10 +94,12 @@ def release_animal(arboretum):
         os.system("cls" if os.name == "nt" else "clear")
         animal = nenegoose()
         if arboretum.grasslands == []:
+            # clear the screen and print an error
             os.system("cls" if os.name == "nt" else "clear")
             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
             input("\n\nPress enter to continue...")
         else: 
+            # loop over the biomes and display them in terminal
             for index, grassland in enumerate(arboretum.grasslands):
                 print(f'{index + 1}. Grassland ({len(grassland.animals)} animals)')
             print("Release the animal into which biome?")
@@ -96,7 +107,9 @@ def release_animal(arboretum):
             choice3 = input("> ")
 
             try: 
+                # append the animal to the biome list
                 arboretum.grasslands[int(choice3) - 1].add_animal(animal)
+                # clear screen and print success message
                 os.system("cls" if os.name == "nt" else "clear")
                 print(F'Success! The {animal.species} has been added to the biome!')
                 input("\n\nPress enter to continue...")
