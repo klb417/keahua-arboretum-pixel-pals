@@ -13,9 +13,9 @@ class Grassland(IContainsAnimals, IContainsPlants, Identifiable, Biome):
 
     def add_animal(self, animal):
         # Add in checks for animal type
-        self.animals.append(animal)
+        self.add_animal_to_list(animal)
 
     def add_plant(self, plant):
         # Add in checks for plant type
-        self.plants.append(plant)
+        self.add_plant_to_list(plant)
 
