@@ -24,4 +24,4 @@ class IContainsPlants:
             self.plants.update({f"{plant.species}": [plant]})
         else:
             self.plants[f"{plant.species}"].append(plant)
-        self.current_plants += 1
+        self.__current_plants += 1
