@@ -87,6 +87,7 @@ def release_animal(arboretum):
         else: 
             gecko_habitats = list()
             for forest in arboretum.forests:
+                # if the biome has less than 20 animal in it, add it to the list
                 if len(forest.animals) < 20:
                     gecko_habitats.append(forest)
             if gecko_habitats != []:
@@ -98,9 +99,11 @@ def release_animal(arboretum):
                 choice2 = input("> ")
 
                 try:
+                    # capture the selection 
                     selection = gecko_habitats[int(choice2) - 1].id
-                    # append the animal to the biome list
+                    # filter the aboretum.forest list for the selection
                     forest = list(filter(lambda x: x.id == selection, arboretum.forests))
+                    # append the animal to the biome list
 
                     forest[0].add_animal(animal)
                     # clear screen and print success message
@@ -326,7 +329,7 @@ def release_animal(arboretum):
         else: 
             spider_habitats = list()
             for swamp in arboretum.swamps:
-                if len(swamp.animals) < 8:
+                if len(swamp.animals) < 8≈:
                     spider_habitats.append(swamp)
             if spider_habitats != []:
 
