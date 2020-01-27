@@ -23,20 +23,29 @@ def feed_animal():
     print("Choose animal to feed.")
     choice = input("> ")
 
+# once a number is chosen the program will go through this if else statement to find the number that was
     if choice == "1":
+        #once the number is found it will run the animal selected
         g_d_d_gecko = GDDGecko()
+        # I set up a variable for the prey of the animal specifically
         gddgprey = tuple(g_d_d_gecko.prey)
+        # this for loop goes through the prey and print it with a number that is the index +1 using the enumerate method
         for index, prey in enumerate(gddgprey):
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the Gold Dust Day Gecko today?")
+        # a question is presented to the user then a variable is created for the choice of the input
         choice = input("> ")
 
         # print(choice, index, gddgprey)
+        # a try and except is deployed to catch any errors when selecting a choice.
         try:
+            # assuming the user selects a valid number the program excutes the feed method for the animal. Since we added 1 to the index we need to make sure to take it away again.
             g_d_d_gecko.feed(gddgprey[int(choice) - 1])
         except:
+            # this except was added incase someone types in/selects a number that is not on the list provided. This will also happen if they try to type in a word.
             print("pick a number on the list...")
             input("Press any button to continue.")
+            # this will re start the feed animals module so that they could try again
             return feed_animal()
         
     elif choice == "2":
@@ -139,6 +148,7 @@ def feed_animal():
             return feed_animal()
 
     else:
+        # this is a catch so that if a number is selected that is not on the list it will take them back to the beginning to try again
         print("Pick a number that is actually on the list...")
         input("Press any key to continue.")
         return feed_animal()
