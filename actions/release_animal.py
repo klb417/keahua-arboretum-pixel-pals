@@ -36,17 +36,17 @@ def release_animal(arboretum):
             new_list = []
             for river in arboretum.rivers:
                 # add the river to the list if it has less than 12 animals in it
-                if len(river.animals) < 12:
+                if river.is_animals_full() == False:
                     new_list.append(river)
             for coast in arboretum.coastlines:
                 # add the coastline to the list if it has less than 15 animals in it
-                if len(coast.animals) < 15:
+                if coast.is_animals_full() == False:
                     new_list.append(coast)
 
             if new_list != []:
             # loop over list and display in terminal
                 for index, place in enumerate(new_list):
-                    print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
+                    print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
                 print("Release the animal into which biome?")
                 choice1 = input("> ")
                 try:
@@ -88,12 +88,12 @@ def release_animal(arboretum):
             gecko_habitats = list()
             for forest in arboretum.forests:
                 # if the biome has less than 20 animal in it, add it to the list
-                if len(forest.animals) < 20:
+                if forest.is_animals_full() == False:
                     gecko_habitats.append(forest)
             if gecko_habitats != []:
                 # loop over the biomes and display them in terminal
                 for index, forest in enumerate(gecko_habitats):
-                    print(f'{index + 1}. Forest ({len(forest.animals)} animals)')
+                    print(f'{index + 1}. Forest ({forest.current_animals} animals)')
                 print("Release the animal into which biome?")
 
                 choice2 = input("> ")
@@ -131,12 +131,12 @@ def release_animal(arboretum):
         else: 
             nenegoose_habitats = list()
             for land in arboretum.grasslands:
-                if len(land.animals) < 22:
+                if land.is_animals_full() == False:
                     nenegoose_habitats.append(land)
             if nenegoose_habitats != []:
                 # loop over the biomes and display them in terminal
                 for index, grassland in enumerate(nenegoose_habitats):
-                    print(f'{index + 1}. Grassland ({len(grassland.animals)} animals)')
+                    print(f'{index + 1}. Grassland ({grassland.current_animals} animals)')
                 print("Release the animal into which biome?")
 
                 choice3 = input("> ")
@@ -146,9 +146,8 @@ def release_animal(arboretum):
                     # append the animal to the biome list
                     land = list(filter(lambda x: x.id == selection, arboretum.grasslands))
 
-                    land[0].add_animal(animal)
                     # append the animal to the biome list
-                    arboretum.grasslands[int(choice3) - 1].add_animal(animal)
+                    land[0].add_animal(animal)
                     # clear screen and print success message
                     os.system("cls" if os.name == "nt" else "clear")
                     print(F'Success! The {animal.species} has been added to the biome!')
@@ -174,14 +173,14 @@ def release_animal(arboretum):
         else: 
             Kikakapu_habitats = list()
             for river in arboretum.rivers:
-                if len(river.animals) < 12:
+                if river.is_animals_full() == False:
                     Kikakapu_habitats.append(river)
             for swamp in arboretum.swamps:
-                if len(swamp.animals) < 8:
+                if swamp.is_animals_full() == False:
                     Kikakapu_habitats.append(swamp)
             if Kikakapu_habitats != []:
                 for index, place in enumerate(Kikakapu_habitats):
-                    print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
+                    print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
                 print("Release the animal into which biome?")
                 choice4 = input("> ")
                 try: 
@@ -215,14 +214,14 @@ def release_animal(arboretum):
         else: 
             pueo_habitats = list()
             for land in arboretum.grasslands:
-                if len(land.animals) < 22:
+                if land.is_animals_full() == False:
                     pueo_habitats.append(land)
             for forest in arboretum.forests:
-                if len(forest.animals) < 20:
+                if forest.is_animals_full() == False:
                     pueo_habitats.append(forest)
             if pueo_habitats != []:
                 for index, place in enumerate(pueo_habitats):
-                    print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
+                    print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
                 print("Release the animal into which biome?")
                 choice5 = input("> ")
                 try: 
@@ -255,11 +254,11 @@ def release_animal(arboretum):
         else: 
             ulae_habitats = list()
             for coast in arboretum.coastlines:
-                if len(coast.animals) < 15:
+                if coast.is_animals_full() == False:
                     ulae_habitats.append(coast)
             if ulae_habitats != []:
                 for index, coastline in enumerate(ulae_habitats):
-                    print(f'{index + 1}. Coastline ({len(coastline.animals)} animals)')
+                    print(f'{index + 1}. Coastline ({coastline.current_animals} animals)')
                 print("Release the animal into which biome?")
 
                 choice6 = input("> ")
@@ -290,14 +289,14 @@ def release_animal(arboretum):
         else: 
             Opeapea_habitats = list()
             for mountain in arboretum.mountains:
-                if len(mountain.animals) < 6:
+                if mountain.is_animals_full() == False:
                     Opeapea_habitats.append(mountain)
             for forest in arboretum.forests:
-                if len(forest.animals) < 20:
+                if forest.is_animals_full() == False:
                     Opeapea_habitats.append(forest)
             if Opeapea_habitats != []:
                 for index, place in enumerate(Opeapea_habitats):
-                    print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
+                    print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
                 print("Release the animal into which biome?")
                 choice7 = input("> ")
                 try: 
@@ -329,12 +328,12 @@ def release_animal(arboretum):
         else: 
             spider_habitats = list()
             for swamp in arboretum.swamps:
-                if len(swamp.animals) < 8:
+                if swamp.is_animals_full() == False:
                     spider_habitats.append(swamp)
             if spider_habitats != []:
 
                 for index, swamp in enumerate(spider_habitats):
-                    print(f'{index + 1}. Swamp ({len(swamp.animals)} animals)')
+                    print(f'{index + 1}. Swamp ({swamp.current_animals} animals)')
                 print("Release the animal into which biome?")
 
                 choice8 = input("> ")
