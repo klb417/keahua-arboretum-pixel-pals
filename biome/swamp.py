@@ -15,9 +15,17 @@ class Swamp(IContainsAnimals, IContainsPlants, Identifiable, Biome):
         Biome.__init__(self, name)
 
     def add_animal(self, animal):
-        # Add in checks for animal type
-        self.animals.append(animal)
+        if not self.is_animals_full():
+            self.animals.append(animal)
+            
+        else:
+            print("Biome is full, choose another biome")
+            input("Press ENTER to continue")
 
     def add_plant(self, plant):
-        # Add in checks for plant type
-        self.plants.append(plant)
+        if not self.is_plants_full():
+            self.plants.append(plant)
+            
+        else:
+            print("Biome is full, choose another biome")
+            input("Press ENTER to continue")

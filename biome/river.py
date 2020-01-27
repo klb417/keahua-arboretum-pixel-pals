@@ -15,19 +15,17 @@ class River(IContainsAnimals, IContainsPlants, Identifiable, Biome):
         Biome.__init__(self, name)
 
     def add_animal(self, animal):
-        try:
-            if animal.aquatic and animal.cell_type == "hypertonic":
-                self.animals.append(animal)
-        except AttributeError:
-            raise AttributeError(
-                "Cannot add non-aquatic, or saltwater animals to a river"
-            )
+        if not self.is_animals_full():
+            self.animals.append(animal)
+            
+        else:
+            print("Biome is full, choose another biome")
+            input("Press ENTER to continue")
 
     def add_plant(self, plant):
-        try:
-            if plant.freshwater and plant.requires_current:
-                self.plants.append(plant)
-        except AttributeError:
-            raise AttributeError(
-                "Cannot add plants that require brackish water or stagnant water to a river biome"
-            )
+        if not self.is_plants_full():
+            self.plants.append(plant)
+            
+        else:
+            print("Biome is full, choose another biome")
+            input("Press ENTER to continue")
