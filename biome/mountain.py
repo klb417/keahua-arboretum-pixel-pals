@@ -4,8 +4,8 @@ from interfaces import IContainsPlants
 from interfaces import IWalking
 from .biome import Biome
 
-class Mountain(IContainsAnimals, IContainsPlants, Identifiable, Biome):
 
+class Mountain(IContainsAnimals, IContainsPlants, Identifiable, Biome):
     def __init__(self, name):
         IContainsAnimals.__init__(self, 6)
         IContainsPlants.__init__(self, 4)

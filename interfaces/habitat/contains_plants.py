@@ -7,5 +7,9 @@ class IContainsPlants:
     def plants(self):
         return self.__plants
 
-    def is_plants_not_full():
-        return len(self.plants) < self.__maximum_plants
+    @property
+    def maximum_plants(self):
+        return self.__maximum_plants
+
+    def is_plants_full():
+        return len(self.plants) >= self.__maximum_plants

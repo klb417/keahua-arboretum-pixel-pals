@@ -8,7 +8,6 @@ from .biome import Biome
 
 
 class Swamp(IContainsAnimals, IContainsPlants, Identifiable, Biome):
-
     def __init__(self, name):
         IContainsAnimals.__init__(self, 8)
         IContainsPlants.__init__(self, 12)
@@ -18,7 +17,6 @@ class Swamp(IContainsAnimals, IContainsPlants, Identifiable, Biome):
     def add_animal(self, animal):
         # Add in checks for animal type
         self.animals.append(animal)
-
 
     def add_plant(self, plant):
         # Add in checks for plant type
