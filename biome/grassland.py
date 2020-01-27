@@ -12,11 +12,8 @@ class Grassland(IContainsAnimals, IContainsPlants, Identifiable, Biome):
         Biome.__init__(self, name)
 
     def add_animal(self, animal):
-        if self.is_animals_not_full():
-            # Add in checks for animal type
-            self.animals.append(animal)
-        else:
-            input("This biome is full")
+        # Add in checks for animal type
+        self.animals.append(animal)
 
     def add_plant(self, plant):
         # Add in checks for plant type
