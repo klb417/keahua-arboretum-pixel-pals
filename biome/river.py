@@ -16,16 +16,16 @@ class River(IContainsAnimals, IContainsPlants, Identifiable, Biome):
 
     def add_animal(self, animal):
         if not self.is_animals_full():
-            self.animals.append(animal)
-            
+            self.add_animal_to_list(animal)
+
         else:
             print("Biome is full, choose another biome")
             input("Press ENTER to continue")
 
     def add_plant(self, plant):
         if not self.is_plants_full():
-            self.plants.append(plant)
-            
+            self.add_plant_to_list(plant)
+
         else:
             print("Biome is full, choose another biome")
             input("Press ENTER to continue")
