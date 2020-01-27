@@ -212,23 +212,3 @@ Mountain [bdf33960]
 
 Press any key to continue...
 ```
-
-## Stretch Goals
-
-1. Display groups of things in each biome when you display the lists above.
-    ```html
-    1. Grassland (1 Silversword, 4 Blue Jade Vine, 4 Nene Goose)
-    ```
-2. Only show biomes that are able to store the number of animals/plants. For example, the user chooses to release a river dolphin and one of the river biomes is already at capacity.
-    ```sh
-    1. Mountain (5 plants)
-    2. River (12 animals)  <-- not a valid choice
-    3. Grassland (0 plants)
-    ```
-
-     Instead of showing all possible options, only show valid options.
-
-    ```sh
-    1. Mountain (5 plants)
-    2. Grassland (0 plants)
-    ```
