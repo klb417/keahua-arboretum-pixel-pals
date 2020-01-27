@@ -31,33 +31,48 @@ def release_animal(arboretum):
             input("\n\nPress enter to continue...")
 
         else: 
+
             # combine the rivers and coastline lists
-            new_list = arboretum.rivers + arboretum.coastlines
+            new_list = []
+            for river in arboretum.rivers:
+                # add the river to the list if it has less than 12 animals in it
+                if len(river.animals) < 12:
+                    new_list.append(river)
+            for coast in arboretum.coastlines:
+                # add the coastline to the list if it has less than 15 animals in it
+                if len(coast.animals) < 15:
+                    new_list.append(coast)
+
+            if new_list != []:
             # loop over list and display in terminal
-            for index, place in enumerate(new_list):
-                print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
-            print("Release the animal into which biome?")
-            choice1 = input("> ")
-            try:
-                selection = new_list[int(choice1) - 1].id
-                # search the river list for the selection
-                river = list(filter(lambda x: x.id == selection, arboretum.rivers))
-                # search the coast list for the selection
-                coast = list(filter(lambda x: x.id == selection, arboretum.coastlines))
-                if river != []:
-                    # add the animal to the river that was found in the search
-                    river[0].add_animal(animal)
-                elif coast != []: 
-                    # add the animal to the river that was found in the search
-                    coast[0].add_animal(animal)
-                    # clear screen and print success message
-                os.system("cls" if os.name == "nt" else "clear")
-                print(F'Success! The {animal.species} has been added to the biome!')
+                for index, place in enumerate(new_list):
+                    print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
+                print("Release the animal into which biome?")
+                choice1 = input("> ")
+                try:
+                    selection = new_list[int(choice1) - 1].id
+                    # search the river list for the selection
+                    river = list(filter(lambda x: x.id == selection, arboretum.rivers))
+                    # search the coast list for the selection
+                    coast = list(filter(lambda x: x.id == selection, arboretum.coastlines))
+                    if river != []:
+                        # add the animal to the river that was found in the search
+                        river[0].add_animal(animal)
+                    elif coast != []: 
+                        # add the animal to the river that was found in the search
+                        coast[0].add_animal(animal)
+                        # clear screen and print success message
+                    os.system("cls" if os.name == "nt" else "clear")
+                    print(F'Success! The {animal.species} has been added to the biome!')
+                    input("\n\nPress enter to continue...")
+                except: 
+                    # re-load the release animal function if the user enters a choice that is not on the list
+                    release_animal(arboretum)
+            else:
+                # print this if there are biomes created but they are all full
+                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Biome for this animal to live in.")
                 input("\n\nPress enter to continue...")
-            except: 
-                # re-load the release animal function if the user enters a choice that is not on the list
-                release_animal(arboretum)
-        
+
             
 
 
@@ -70,22 +85,32 @@ def release_animal(arboretum):
             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
             input("\n\nPress enter to continue...")
         else: 
-            # loop over the biomes and display them in terminal
-            for index, forest in enumerate(arboretum.forests):
-                print(f'{index + 1}. Forest ({len(forest.animals)} animals)')
-            print("Release the animal into which biome?")
+            gecko_habitats = list()
+            for forest in arboretum.forests:
+                if len(forest.animals) < 2:
+                    gecko_habitats.append(forest)
+                    print("append!")
+            if gecko_habitats != []:
+                # loop over the biomes and display them in terminal
+                for index, forest in enumerate(gecko_habitats):
+                    print(f'{index + 1}. Forest ({len(forest.animals)} animals)')
+                print("Release the animal into which biome?")
 
-            choice2 = input("> ")
+                choice2 = input("> ")
 
-            try:
-                # append the animal to the biome list
-                arboretum.forests[int(choice2) - 1].add_animal(animal)
-                 # clear screen and print success message
-                os.system("cls" if os.name == "nt" else "clear")
-                print(F'Success! The {animal.species} has been added to the biome!')
+                try:
+                    # append the animal to the biome list
+                    arboretum.forests[int(choice2) - 1].add_animal(animal)
+                    # clear screen and print success message
+                    os.system("cls" if os.name == "nt" else "clear")
+                    print(F'Success! The {animal.species} has been added to the biome!')
+                    input("\n\nPress enter to continue...")
+                except: 
+                    release_animal(arboretum)
+            else: 
+                # print this if there are biomes created but they are all full
+                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Biome for this animal to live in.")
                 input("\n\nPress enter to continue...")
-            except: 
-                release_animal(arboretum)
 
 
 
