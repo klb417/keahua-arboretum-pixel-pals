@@ -7,6 +7,11 @@ def release_animal(arboretum):
     # clears the screen
     os.system("cls" if os.name == "nt" else "clear")
 
+    # Printing the header
+    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
+
     # creates the add animal menu
     print("1. River Dolphin")
     print("2. Gold Dust Day Gecko")
@@ -18,7 +23,12 @@ def release_animal(arboretum):
     print("8. Happy-Face Spider")
 
 
-    choice = input("Choose animal to release > ")
+    # Capturing user input and assigning it to "choice" variable
+    choice = input('''
+Choose an animal to release or
+Type M to return to the main menu.
+
+> ''')
 
     if choice == "1":
         animal = RiverDolphin()
@@ -27,6 +37,10 @@ def release_animal(arboretum):
         if arboretum.rivers == [] and arboretum.coastlines == []:
             # clear the screen and print an error
             os.system("cls" if os.name == "nt" else "clear")
+            # Printing the header
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
             input("\n\nPress enter to continue...")
 
@@ -82,6 +96,10 @@ def release_animal(arboretum):
         if arboretum.forests == []:
             # clear the screen and print an error
             os.system("cls" if os.name == "nt" else "clear")
+            # Printing the header
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
             input("\n\nPress enter to continue...")
         else: 
@@ -126,6 +144,10 @@ def release_animal(arboretum):
         if arboretum.grasslands == []:
             # clear the screen and print an error
             os.system("cls" if os.name == "nt" else "clear")
+            # Printing the header
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
             input("\n\nPress enter to continue...")
         else: 
@@ -167,6 +189,10 @@ def release_animal(arboretum):
         animal = Kikakapu()
         if arboretum.rivers == [] and arboretum.swamps == []:
             os.system("cls" if os.name == "nt" else "clear")
+            # Printing the header
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
             input("\n\nPress enter to continue...")
 
@@ -208,6 +234,10 @@ def release_animal(arboretum):
         animal = Pueo()
         if arboretum.grasslands == [] and arboretum.forests == []:
             os.system("cls" if os.name == "nt" else "clear")
+            # Printing the header
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
             input("\n\nPress enter to continue...")
 
@@ -249,6 +279,10 @@ def release_animal(arboretum):
         animal = Ulae()
         if arboretum.coastlines == []:
             os.system("cls" if os.name == "nt" else "clear")
+            # Printing the header
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
             input("\n\nPress enter to continue...")
         else: 
@@ -283,6 +317,10 @@ def release_animal(arboretum):
         animal = Opeapea()
         if arboretum.mountains == [] and arboretum.forests == []:
             os.system("cls" if os.name == "nt" else "clear")
+            # Printing the header
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
             input("\n\nPress enter to continue...")
 
@@ -323,6 +361,10 @@ def release_animal(arboretum):
         animal = HHFSpider()
         if arboretum.swamps == []:
             os.system("cls" if os.name == "nt" else "clear")
+            # Printing the header
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
             input("\n\nPress enter to continue...")
         else: 
