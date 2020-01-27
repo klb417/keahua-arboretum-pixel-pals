@@ -171,10 +171,10 @@ def release_animal(arboretum):
         else: 
             Kikakapu_habitats = list()
             for river in arboretum.rivers:
-                if len(river.animals) < 2:
+                if len(river.animals) < 12:
                     Kikakapu_habitats.append(river)
             for swamp in arboretum.swamps:
-                if len(swamp.animals) < 2:
+                if len(swamp.animals) < 8:
                     Kikakapu_habitats.append(swamp)
             if Kikakapu_habitats != []:
                 for index, place in enumerate(Kikakapu_habitats):
@@ -210,26 +210,36 @@ def release_animal(arboretum):
             input("\n\nPress enter to continue...")
 
         else: 
-            new_list = arboretum.grasslands + arboretum.forests
-            for index, place in enumerate(new_list):
-                print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
-            print("Release the animal into which biome?")
-            choice5 = input("> ")
-            try: 
-                selection = new_list[int(choice5) - 1].id
-                forest = list(filter(lambda x: x.id == selection, arboretum.forests))
-                grassland = list(filter(lambda x: x.id == selection, arboretum.grasslands))
+            pueo_habitats = list()
+            for land in arboretum.grasslands:
+                if len(land.animals) < 22:
+                    pueo_habitats.append(land)
+            for forest in arboretum.forests:
+                if len(forest.animals) < 20:
+                    pueo_habitats.append(forest)
+            if pueo_habitats != []:
+                for index, place in enumerate(pueo_habitats):
+                    print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
+                print("Release the animal into which biome?")
+                choice5 = input("> ")
+                try: 
+                    selection = pueo_habitats[int(choice5) - 1].id
+                    forest = list(filter(lambda x: x.id == selection, arboretum.forests))
+                    grassland = list(filter(lambda x: x.id == selection, arboretum.grasslands))
 
-                if grassland != []:
-                    grassland[0].add_animal(animal)
-                if forest != []: 
-                    forest[0].add_animal(animal)
-                os.system("cls" if os.name == "nt" else "clear")
-                print(F'Success! The {animal.species} has been added to the biome!')
+                    if grassland != []:
+                        grassland[0].add_animal(animal)
+                    if forest != []: 
+                        forest[0].add_animal(animal)
+                    os.system("cls" if os.name == "nt" else "clear")
+                    print(F'Success! The {animal.species} has been added to the biome!')
+                    input("\n\nPress enter to continue...")
+                except: 
+                    release_animal(arboretum)
+            else: 
+                # print this if there are biomes created but they are all full
+                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Biome for this animal to live in.")
                 input("\n\nPress enter to continue...")
-            except: 
-                release_animal(arboretum)
-
 
 
     if choice == "6":
@@ -263,26 +273,36 @@ def release_animal(arboretum):
             input("\n\nPress enter to continue...")
 
         else: 
-            new_list = arboretum.mountains + arboretum.forests
-            for index, place in enumerate(new_list):
-                print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
-            print("Release the animal into which biome?")
-            choice7 = input("> ")
-            try: 
-                selection = new_list[int(choice7) - 1].id
-                forest = list(filter(lambda x: x.id == selection, arboretum.forests))
-                mountain = list(filter(lambda x: x.id == selection, arboretum.mountains))
+            Opeapea_habitats = list()
+            for mountain in arboretum.mountains:
+                if len(mountain.animals) < 2:
+                    Opeapea_habitats.append(mountain)
+            for forest in arboretum.forests:
+                if len(forest.animals) < 2:
+                    Opeapea_habitats.append(forest)
+            if Opeapea_habitats != []:
+                for index, place in enumerate(Opeapea_habitats):
+                    print(f'{index + 1}. {place.name} ({len(place.animals)} animals)')
+                print("Release the animal into which biome?")
+                choice7 = input("> ")
+                try: 
+                    selection = Opeapea_habitats[int(choice7) - 1].id
+                    forest = list(filter(lambda x: x.id == selection, arboretum.forests))
+                    mountain = list(filter(lambda x: x.id == selection, arboretum.mountains))
 
-                if mountain != []:
-                    mountain[0].add_animal(animal)
-                if forest != []: 
-                    forest[0].add_animal(animal)
-                os.system("cls" if os.name == "nt" else "clear")
-                print(F'Success! The {animal.species} has been added to the biome!')
+                    if mountain != []:
+                        mountain[0].add_animal(animal)
+                    if forest != []: 
+                        forest[0].add_animal(animal)
+                    os.system("cls" if os.name == "nt" else "clear")
+                    print(F'Success! The {animal.species} has been added to the biome!')
+                    input("\n\nPress enter to continue...")
+                except: 
+                    release_animal(arboretum)
+            else: 
+                # print this if there are biomes created but they are all full
+                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Biome for this animal to live in.")
                 input("\n\nPress enter to continue...")
-            except: 
-                release_animal(arboretum)
-
 
     if choice == "8":
         os.system("cls" if os.name == "nt" else "clear")
