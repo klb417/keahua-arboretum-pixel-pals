@@ -329,7 +329,7 @@ def release_animal(arboretum):
         else: 
             spider_habitats = list()
             for swamp in arboretum.swamps:
-                if len(swamp.animals) < 8≈:
+                if len(swamp.animals) < 8:
                     spider_habitats.append(swamp)
             if spider_habitats != []:
 
