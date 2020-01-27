@@ -51,6 +51,8 @@ def feed_animal():
         # a try and except is deployed to catch any errors when selecting a choice.
         try:
             # assuming the user selects a valid number the program excutes the feed method for the animal. Since we added 1 to the index we need to make sure to take it away again.
+            print(gddgprey[int(choice) - 1])
+            print(type(gddgprey[int(choice) - 1]))
             g_d_d_gecko.feed(gddgprey[int(choice) - 1])
         except:
             os.system('cls' if os.name == 'nt' else 'clear')
