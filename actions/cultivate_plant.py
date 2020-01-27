@@ -17,8 +17,9 @@ def cultivate_plant(arboretum):
     os.system("cls" if os.name == "nt" else "clear")
 
     # Printing menu options to the console
-    print('''Plants
-    ''')
+    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
     print("1. Rainbow Eucalyptus Tree")
     print("2. Silversword")
     print("3. Mountain Apple Tree")
@@ -27,7 +28,9 @@ def cultivate_plant(arboretum):
     # Capturing user input and assigning it to "choice" variable
     choice = input('''
 Choose a plant to cultivate, or
-Type M to return to the main menu. > ''')
+Type M to return to the main menu. 
+
+> ''')
 
     # if statements check user input, when it evaluates to true the selected plant
     # is used as the basis for the next menu
