@@ -66,7 +66,9 @@ Type M to return to the main menu.
                 for index, place in enumerate(new_list):
                     print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
                 print("\nRelease the animal into which habitat?\n")
-                choice1 = input("> ")
+                choice1 = input("Type M to return to the main menu. > ")
+                if choice1.lower() == "m":
+                    return
                 try:
                     selection = new_list[int(choice1) - 1].id
                     # search the river list for the selection
@@ -126,7 +128,7 @@ Type M to return to the main menu.
                     print(f'{index + 1}. Forest ({forest.current_animals} animals)')
                 print("\nRelease the animal into which habitat?\n")
 
-                choice2 = input("> ")
+                choice2 = input("Type M to return to the main menu. > ")
 
                 try:
                     # capture the selection 
@@ -181,7 +183,7 @@ Type M to return to the main menu.
                     print(f'{index + 1}. Grassland ({grassland.current_animals} animals)')
                 print("\nRelease the animal into which habitat?\n")
 
-                choice3 = input("> ")
+                choice3 = input("Type M to return to the main menu. > ")
 
                 try: 
                     selection = nenegoose_habitats[int(choice3) - 1].id
@@ -236,7 +238,7 @@ Type M to return to the main menu.
                 for index, place in enumerate(Kikakapu_habitats):
                     print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
                 print("\nRelease the animal into which habitat?\n")
-                choice4 = input("> ")
+                choice4 = input("Type M to return to the main menu. > ")
                 try: 
                     selection = Kikakapu_habitats[int(choice4) - 1].id
                     swamp = list(filter(lambda x: x.id == selection, arboretum.swamps))
@@ -289,7 +291,7 @@ Type M to return to the main menu.
                 for index, place in enumerate(pueo_habitats):
                     print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
                 print("\nRelease the animal into which habitat?\n")
-                choice5 = input("> ")
+                choice5 = input("Type M to return to the main menu. > ")
                 try: 
                     selection = pueo_habitats[int(choice5) - 1].id
                     forest = list(filter(lambda x: x.id == selection, arboretum.forests))
@@ -339,7 +341,7 @@ Type M to return to the main menu.
                     print(f'{index + 1}. Coastline ({coastline.current_animals} animals)')
                 print("\nRelease the animal into which habitat?\n")
 
-                choice6 = input("> ")
+                choice6 = input("Type M to return to the main menu. > ")
                 try: 
                     selection = ulae_habitats[int(choice6) - 1].id
                     # append the animal to the biome list
@@ -388,7 +390,7 @@ Type M to return to the main menu.
                 for index, place in enumerate(Opeapea_habitats):
                     print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
                 print("\nRelease the animal into which habitat?\n")
-                choice7 = input("> ")
+                choice7 = input("Type M to return to the main menu. > ")
                 try: 
                     selection = Opeapea_habitats[int(choice7) - 1].id
                     forest = list(filter(lambda x: x.id == selection, arboretum.forests))
@@ -437,7 +439,7 @@ Type M to return to the main menu.
                     print(f'{index + 1}. Swamp ({swamp.current_animals} animals)')
                 print("\nRelease the animal into which habitat?\n")
 
-                choice8 = input("> ")
+                choice8 = input("Type M to return to the main menu. > ")
                 try:
                     selection = spider_habitats[int(choice8) - 1].id
                     # append the animal to the biome list

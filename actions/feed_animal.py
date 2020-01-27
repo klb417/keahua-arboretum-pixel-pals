@@ -23,7 +23,7 @@ def feed_animal():
     print("7. Ope'ape'a")
     print("8. Happy-Face Spider")
 
-    print("Choose animal to feed.")
+    print("\nChoose animal to feed.")
     choice = input("> ")
 
 # once a number is chosen the program will go through this if else statement to find the number that was
