@@ -11,6 +11,9 @@ from animals import RiverDolphin, GDDGecko, HHFSpider, Kikakapu, nenegoose, Opea
 
 def feed_animal():
     os.system('cls' if os.name == 'nt' else 'clear')
+    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
     print("1. Gold Dust Day Gecko")
     print("2. River Dolphin")
     print("3. Nene Goose")
@@ -29,6 +32,9 @@ def feed_animal():
         g_d_d_gecko = GDDGecko()
         # I set up a variable for the prey of the animal specifically
         gddgprey = tuple(g_d_d_gecko.prey)
+        print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         # this for loop goes through the prey and print it with a number that is the index +1 using the enumerate method
         for index, prey in enumerate(gddgprey):
             print(f"{index + 1}. {prey}")
@@ -42,6 +48,9 @@ def feed_animal():
             # assuming the user selects a valid number the program excutes the feed method for the animal. Since we added 1 to the index we need to make sure to take it away again.
             g_d_d_gecko.feed(gddgprey[int(choice) - 1])
         except:
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             # this except was added incase someone types in/selects a number that is not on the list provided. This will also happen if they try to type in a word.
             print("pick a number on the list...")
             input("Press any button to continue.")
@@ -51,6 +60,9 @@ def feed_animal():
     elif choice == "2":
         river_dolphin = RiverDolphin()
         rvrdolprey = tuple(river_dolphin.prey)
+        print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         for index, prey in enumerate(rvrdolprey):
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the River Dolphin today?")
@@ -58,6 +70,9 @@ def feed_animal():
         try:
             river_dolphin.feed(rvrdolprey[int(choice) - 1])
         except:
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("pick a number on the list...")
             input("Press any button to continue.")
             return feed_animal()
@@ -65,6 +80,9 @@ def feed_animal():
     elif choice == "3":
         nene_goose = nenegoose()
         neneprey = tuple(nene_goose.prey)
+        print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         for index, prey in enumerate(neneprey):
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the Nene Goose today?")
@@ -72,6 +90,9 @@ def feed_animal():
         try:
             nene_goose.feed(neneprey[int(choice) - 1])
         except:
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("pick a number on the list...")
             input("Press any button to continue.")
             return feed_animal()
@@ -79,6 +100,9 @@ def feed_animal():
     elif choice == "4":
         kikakapu = Kikakapu()
         kikaprey = tuple(kikakapu.prey)
+        print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         for index, prey in enumerate(kikaprey):
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the Kikakapu today?")
@@ -86,6 +110,9 @@ def feed_animal():
         try:
             kikakapu.feed(kikaprey[int(choice) - 1])
         except:
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("pick a number on the list...")
             input("Press any button to continue.")
             return feed_animal()
@@ -93,6 +120,9 @@ def feed_animal():
     elif choice == "5":
         pueo = Pueo()
         pueoprey = tuple(pueo.prey)
+        print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         for index, prey in enumerate(pueoprey):
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the Pueo today?")
@@ -100,6 +130,9 @@ def feed_animal():
         try:
             pueo.feed(pueoprey[int(choice) - 1])
         except:
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("pick a number on the list...")
             input("Press any button to continue.")
             return feed_animal()
@@ -108,6 +141,9 @@ def feed_animal():
     elif choice == "6":
         ulae = Ulae()
         ulaeprey = tuple(ulae.prey)
+        print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         for index, prey in enumerate(ulaeprey):
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the 'Ulae today?")
@@ -115,6 +151,9 @@ def feed_animal():
         try:
             ulae.feed(ulaeprey[int(choice) - 1])
         except:
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("pick a number on the list...")
             input("Press any button to continue.")
             return feed_animal()
@@ -122,6 +161,9 @@ def feed_animal():
     elif choice == "7":
         opeapea = Opeapea()
         opeprey = tuple(opeapea.prey)
+        print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         for index, prey in enumerate(opeprey):
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the Ope'ape'a today?")
@@ -129,6 +171,9 @@ def feed_animal():
         try:
             opeapea.feed(opeprey[int(choice) - 1])
         except:
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("pick a number on the list...")
             input("Press any button to continue.")
             return feed_animal()
@@ -136,6 +181,9 @@ def feed_animal():
     elif choice == "8":
         hhfspider = HHFSpider()
         hhfsprey = tuple(hhfspider.prey)
+        print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         for index, prey in enumerate(hhfsprey):
             print(f"{index + 1}. {prey}")
         print(f"What is on the menu for the Happy-Face Spider today?")
@@ -143,11 +191,17 @@ def feed_animal():
         try:
             hhfspider.feed(hhfsprey[int(choice) - 1])
         except:
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             print("pick a number on the list...")
             input("Press any button to continue.")
             return feed_animal()
 
     else:
+        print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         # this is a catch so that if a number is selected that is not on the list it will take them back to the beginning to try again
         print("Pick a number that is actually on the list...")
         input("Press any key to continue.")
