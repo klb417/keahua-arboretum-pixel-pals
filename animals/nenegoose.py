@@ -3,6 +3,8 @@ from interfaces import IFlying
 from interfaces import Identifiable
 from interfaces import IWalking
 from interfaces import ITerrestrial
+import os
+
 class nenegoose(Animal, IFlying, IWalking, ITerrestrial, Identifiable):
 
     def __init__(self):
@@ -18,6 +20,10 @@ class nenegoose(Animal, IFlying, IWalking, ITerrestrial, Identifiable):
         return self.__prey
 
     def feed(self, prey):
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         if prey in self.__prey:
             print(f"The Nene Goose ate {prey} for a meal")
             input("Press any button to continue...")

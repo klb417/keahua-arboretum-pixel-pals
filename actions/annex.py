@@ -8,6 +8,11 @@ def annex_biome(arboretum):
     # Clears the terminal of previous contents
     os.system("cls" if os.name == "nt" else "clear")
 
+    # Printing the header
+    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
+
     # Printing menu options to the console
     print("1. Mountain")
     print("2. Swamp")
@@ -17,7 +22,11 @@ def annex_biome(arboretum):
     print("6. Coastline")
 
     # Capturing user input and assigning it to "choice" variable
-    choice = input("Choose biome to annex > ")
+    choice = input('''
+Choose habitat to annex or
+Type M to return to the main menu.
+
+> ''')
 
     # if statements check user input, when one evaluates to true the selected biome list is appended in arboretum dictionary
     if choice == "1":
@@ -38,3 +47,5 @@ def annex_biome(arboretum):
     if choice == "6":
         coastline = Coastline("Coastline")
         arboretum.coastlines.append(coastline)
+    elif choice.lower() == "m":
+        return
