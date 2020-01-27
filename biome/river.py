@@ -24,7 +24,7 @@ class River(IContainsAnimals, IContainsPlants, Identifiable, Biome):
                     "Cannot add non-aquatic, or saltwater animals to a river"
                 )
         else:
-            print("Choose another biome")
+            print("Biome is full, choose another biome")
 
     def add_plant(self, plant):
         try:
