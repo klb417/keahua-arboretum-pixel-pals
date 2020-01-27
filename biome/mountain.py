@@ -22,7 +22,7 @@ class Mountain(IContainsAnimals, IContainsPlants, Identifiable, Biome):
                     "Cannot add aquatic animals to a mountain"
                 )
         else:
-            print("Choose another biome")
+            print("Biome is full, choose another biome")
 
     def add_plant(self, plant):
         # Add in checks for plant type

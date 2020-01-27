@@ -17,7 +17,7 @@ class River(IContainsAnimals, IContainsPlants, Identifiable, Biome):
     def add_animal(self, animal):
         if self.is_animals_not_full():
             try:
-                if animal.aquatic and animal.cell_type == "hypertonic":
+                if animal.cell_type == "hypertonic":
                     self.animals.append(animal)
             except AttributeError:
                 raise AttributeError(
