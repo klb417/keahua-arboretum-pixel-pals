@@ -3,6 +3,8 @@ from interfaces import IFlying
 from interfaces import Identifiable
 from interfaces import IWalking
 from interfaces import ITerrestrial
+import os
+
 class nenegoose(Animal, IFlying, IWalking, ITerrestrial, Identifiable):
 
     def __init__(self):

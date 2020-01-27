@@ -45,8 +45,12 @@ def feed_animal():
             print(f"{index + 1}. {prey}")
         print(f"\nWhat is on the menu for the Gold Dust Day Gecko today?\n")
         # a question is presented to the user then a variable is created for the choice of the input
-        choice = input("> ")
+        choice = input('''Type M to return to the main menu.
+        
+> ''')
 
+        if choice.lower() == "m":
+            return
         # print(choice, index, gddgprey)
         # a try and except is deployed to catch any errors when selecting a choice.
         try:
@@ -75,7 +79,12 @@ def feed_animal():
         for index, prey in enumerate(rvrdolprey):
             print(f"{index + 1}. {prey}")
         print(f"\nWhat is on the menu for the River Dolphin today?\n")
-        choice = input("> ")
+        choice = input('''Type M to return to the main menu.
+
+> ''')
+
+        if choice.lower() == "m":
+            return
         try:
             river_dolphin.feed(rvrdolprey[int(choice) - 1])
         except:
@@ -97,7 +106,12 @@ def feed_animal():
         for index, prey in enumerate(neneprey):
             print(f"{index + 1}. {prey}")
         print(f"\nWhat is on the menu for the Nene Goose today?\n")
-        choice = input("> ")
+        choice = input('''Type M to return to the main menu.
+
+> ''')
+
+        if choice.lower() == "m":
+            return
         try:
             nene_goose.feed(neneprey[int(choice) - 1])
         except:
@@ -119,7 +133,12 @@ def feed_animal():
         for index, prey in enumerate(kikaprey):
             print(f"{index + 1}. {prey}")
         print(f"\nWhat is on the menu for the Kikakapu today?\n")
-        choice = input("> ")
+        choice = input('''Type M to return to the main menu.
+
+> ''')
+
+        if choice.lower() == "m":
+            return
         try:
             kikakapu.feed(kikaprey[int(choice) - 1])
         except:
@@ -141,7 +160,12 @@ def feed_animal():
         for index, prey in enumerate(pueoprey):
             print(f"{index + 1}. {prey}")
         print(f"\nWhat is on the menu for the Pueo today?\n")
-        choice = input("> ")
+        choice = input('''Type M to return to the main menu.
+
+> ''')
+
+        if choice.lower() == "m":
+            return
         try:
             pueo.feed(pueoprey[int(choice) - 1])
         except:
@@ -164,7 +188,12 @@ def feed_animal():
         for index, prey in enumerate(ulaeprey):
             print(f"{index + 1}. {prey}")
         print(f"\nWhat is on the menu for the 'Ulae today?\n")
-        choice = input("> ")
+        choice = input('''Type M to return to the main menu.
+
+> ''')
+
+        if choice.lower() == "m":
+            return
         try:
             ulae.feed(ulaeprey[int(choice) - 1])
         except:
@@ -186,7 +215,12 @@ def feed_animal():
         for index, prey in enumerate(opeprey):
             print(f"{index + 1}. {prey}")
         print(f"\nWhat is on the menu for the Ope'ape'a today?\n")
-        choice = input("> ")
+        choice = input('''Type M to return to the main menu.
+
+> ''')
+
+        if choice.lower() == "m":
+            return
         try:
             opeapea.feed(opeprey[int(choice) - 1])
         except:
@@ -208,7 +242,12 @@ def feed_animal():
         for index, prey in enumerate(hhfsprey):
             print(f"{index + 1}. {prey}")
         print(f"\nWhat is on the menu for the Happy-Face Spider today?\n")
-        choice = input("> ")
+        choice = input('''Type M to return to the main menu.
+
+> ''')
+
+        if choice.lower() == "m":
+            return
         try:
             hhfspider.feed(hhfsprey[int(choice) - 1])
         except:

@@ -2,6 +2,7 @@ from animals import Animal
 from interfaces import IWalking
 from interfaces import Identifiable
 from interfaces import ITerrestrial
+import os
 class HHFSpider(Animal, IWalking, ITerrestrial, Identifiable):
 
     def __init__(self):

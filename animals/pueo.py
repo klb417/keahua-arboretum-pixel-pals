@@ -2,6 +2,8 @@ from animals import Animal
 from interfaces import ITerrestrial
 from interfaces import IFlying
 from interfaces import Identifiable
+import os
+
 class Pueo(Animal, ITerrestrial, Identifiable):
 
     def __init__(self):
