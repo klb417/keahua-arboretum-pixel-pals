@@ -102,7 +102,8 @@ def create_animal_one_habitat(biome1, arb, animal):
             print("\nRelease the animal into which habitat?\n")
 
             choice2 = input("Type M to return to the main menu. > ")
-
+            if choice2.lower() == "m":
+                return
             try:
                 # capture the selection 
                 selection = animal_list[int(choice2) - 1].id
