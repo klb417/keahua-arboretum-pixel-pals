@@ -1,3 +1,6 @@
+# Author: Cassie Boyd
+
+
 from interfaces import Identifiable
 from interfaces import IContainsAnimals
 from interfaces import IContainsPlants
