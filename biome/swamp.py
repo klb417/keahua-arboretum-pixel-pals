@@ -1,3 +1,7 @@
+# SWAMP.PY
+
+# This module is responsible for creating the Swamp parent class which inherits from IContainsAnimals, IContainsPlants, Identifiable and Biome. It has methods for checking whether the biome is at capacity.
+
 # Author: Cassie Boyd
 
 
