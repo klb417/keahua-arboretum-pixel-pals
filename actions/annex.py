@@ -28,7 +28,7 @@ Type M to return to the main menu.
 
 > ''')
 
-    # if statements check user input, when it evaluates to true the selected biome list is appended in arboretum dictionary
+    # if statements check user input, when one evaluates to true the selected biome list is appended in arboretum dictionary
     if choice == "1":
         mountain = Mountain("Mountain")
         arboretum.mountains.append(mountain)

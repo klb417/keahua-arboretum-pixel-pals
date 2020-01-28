@@ -17,9 +17,9 @@ You have met with other foresters and land managers and have decided on the anim
 1. Run the command `python index.py` to start your application
 
 
-## Biomes
+## Habitats
 
-Listed below are the different biomes, or habitats, that exist in the arboretum and how many new plants and animals that can be introduced into it.
+Listed below are the different habitats, or habitats, that exist in the arboretum and how many new plants and animals that can be introduced into it.
 
 | Mountain | Grassland | River | Forest | Swamp | Coastline |
 |---|---|---|---|---|---|
@@ -66,7 +66,7 @@ Choose a KILLER option.
 > _
 ```
 
-### Biome Annex Sub-Menu
+### Habitat Annex Sub-Menu
 
 If the user chooses option 1, then the following menu will be displayed
 
@@ -78,10 +78,10 @@ If the user chooses option 1, then the following menu will be displayed
 5. River
 6. Coastline
 
-Choose biome to annex. > _
+Choose habitat to annex. > _
 ```
 
-When the user makes a choice, a new instance of that type of biome should be added to list on the arboretum object that contains those biomes.
+When the user makes a choice, a new instance of that type of habitat should be added to list on the arboretum object that contains those habitats.
 
 ### Animal Menu
 
@@ -111,10 +111,10 @@ Where would you like to place the animal?
 > _
 ```
 
-If there are no suitable biomes, the user will see this message:
+If there are no suitable habitats, the user will see this message:
 
 ```html
-Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.
+Uh Oh! There are no habitats for this animal to live in. Please go create a habitat for this animal.
 
 
 Press enter to continue...
@@ -186,7 +186,7 @@ Where would you like to cultivate the Mountain Apple Tree?
 Type M to return to the main menu. > _
 ```
 
-If there are no suitable biomes, the user will see this message:
+If there are no suitable habitats, the user will see this message:
 
 ```html
 Whoops!
@@ -198,7 +198,7 @@ Press any key to return to the main menu.
 
 ### Arboretum Report Menu
 
-Choosing this option will list all existing biomes, and then list all animals and plants in that biome. Only display the first 8 characters of the id in the report.
+Choosing this option will list all existing habitats, and then list all animals and plants in that habitat. Only display the first 8 characters of the id in the report.
 
 ```html
 River [157b2efe]
