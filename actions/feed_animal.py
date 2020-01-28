@@ -1,3 +1,9 @@
+# FEED_ANIMAL.PY
+#
+#This module is respossible for prints the list of animals that are able to be fed then calling the feeding the animals module passing the animal selected.
+#
+# Author(s): James Chapman
+
 import os
 from animals import RiverDolphin, GDDGecko, HHFSpider, Kikakapu, nenegoose, Opeapea, Pueo, Ulae
 from .feeding_the_animal import feeding_the_animal
