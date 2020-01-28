@@ -31,7 +31,7 @@ def feeding_the_animal(animal):
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             # this except was added incase someone types in/selects a number that is not on the list provided. This will also happen if they try to type in a word.
             print("pick a number on the list...")
-            input("Press any button to continue.")
+            input("Press Enter to continue.")
 
             os.system('cls' if os.name == 'nt' else 'clear')
             print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
@@ -55,5 +55,5 @@ def feeding_the_animal(animal):
  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
                 print("pick a number on the list...")
-                input("Press any button to continue.")
+                input("Press Enter to continue.")
                 feeding_the_animal(animal)

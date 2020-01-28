@@ -93,7 +93,7 @@ def feed_animal():
 
     elif choice == "8":
         feeding_the_animal(HHFSpider)
-        
+
     else:
         os.system('cls' if os.name == 'nt' else 'clear')
         print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
@@ -101,5 +101,5 @@ def feed_animal():
  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
         # this is a catch so that if a number is selected that is not on the list it will take them back to the beginning to try again
         print("Pick a number that is actually on the list...")
-        input("Press any key to continue.")
+        input("Press Enter to continue.")
         return feed_animal()
