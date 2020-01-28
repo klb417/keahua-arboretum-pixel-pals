@@ -23,5 +23,5 @@ class IContainsAnimals:
         if animal.species not in self.animals.keys():
             self.animals.update({f"{animal.species}": [animal]})
         else:
-            self.animals[f"{animal.species}"].append(animal)
+            self.animals[animal.species].append(animal)
         self.__current_animals += 1
