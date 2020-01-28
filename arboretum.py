@@ -1,3 +1,11 @@
+# ARBORETUM.PY
+#
+# This file is responsible for defining the arboretum base
+# class that holds the lists of each annexed biome
+#
+# Author(s): Ken Boyd
+
+
 class Arboretum:
     def __init__(self, name, address):
         self.__name = name

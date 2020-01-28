@@ -1,3 +1,12 @@
+# REPORT.PY
+#
+# This file is responsible for printing the
+# arboretum's collection of biomes and their
+# inhabitants to the console.
+#
+# Author(s): Ken Boyd
+
+
 import os
 
 
