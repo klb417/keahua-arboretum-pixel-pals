@@ -1,3 +1,5 @@
+# Authors: Lauren and James
+# defines a class for creating the Kikakapu
 from animals import Animal
 from interfaces import IFreshwater
 from interfaces import Identifiable

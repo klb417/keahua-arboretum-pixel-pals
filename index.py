@@ -17,6 +17,7 @@ from actions import (
     build_facility_report,
     cultivate_plant,
     feed_animal,
+    create_animal_one_habitat
 )
 from plants import (
     Plant,

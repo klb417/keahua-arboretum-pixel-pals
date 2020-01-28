@@ -1,3 +1,5 @@
+# Authors: Lauren and James
+# defines a class for creating the Pueo
 from animals import Animal
 from interfaces import ITerrestrial
 from interfaces import IFlying
