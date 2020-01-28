@@ -1,3 +1,11 @@
+# FEEDING_THE_ANIMAL.PY
+#
+# This module is respossible for getting the list of prey that the animals can eat
+# then calling the feed method attached to the animals. I also added exempts for 
+# when people go off the golden path.
+#
+# Author(s): James Chapman
+
 import os
 
 def feeding_the_animal(animal):

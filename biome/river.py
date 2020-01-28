@@ -1,3 +1,9 @@
+# RIVER.PY
+
+# This module is responsible for creating the River parent class which inherits from IContainsAnimals, IContainsPlants, Identifiable and Biome. It has methods for checking whether the biome is at capacity.
+
+# Author: Cassie Boyd
+
 from interfaces import Identifiable
 from interfaces import IContainsAnimals
 from interfaces import IContainsPlants

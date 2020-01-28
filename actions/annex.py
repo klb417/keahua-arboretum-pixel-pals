@@ -1,3 +1,10 @@
+# ANNEX.PY
+
+# This module is resposible for providing the user with a menu of available biomes. Once chosen by the user, an instance of the selected biome is added to the arboretum dictionary.
+
+# Author(s): Cassie Boyd, Ryan Crowley, Ken Boyd
+
+
 import os
 from arboretum import Arboretum
 from biome import River, Forest, Grassland, Mountain, Coastline, Swamp
