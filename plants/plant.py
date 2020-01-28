@@ -1,3 +1,10 @@
+# PLANT.PY
+#
+# This module is responsible for creating the Plant parent class. Plant inherits
+# from the Indetifiable interface.
+#
+# Author(s): Ryan Crowley
+
 from interfaces import Identifiable
 
 

@@ -1,3 +1,10 @@
+# RETREE.PY
+#
+# This module is responsible for creating the RainbowEucalyptusTree class.
+# RainbowEucalyptusTree inherits from the Plant class.
+#
+# Author(s): Ryan Crowley
+
 from plants import Plant
 
 

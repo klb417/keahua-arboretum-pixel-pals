@@ -1,3 +1,10 @@
+# SILVERSWORD.PY
+#
+# This module is responsible for creating the Silversword class. Silversword
+# inherits from the Plant class.
+#
+# Author(s): Ryan Crowley
+
 from plants import Plant
 
 
