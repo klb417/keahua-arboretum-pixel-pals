@@ -63,7 +63,7 @@ def create_animal_two_habitats(biome1, biome2, arb, animal):
                 input("\n\nPress enter to continue...")
             except: 
                 # re-load the release animal function if the user enters a choice that is not on the list
-                release_animal(arb)
+                create_animal_two_habitats(biome1, biome2, arb, animal)
         else:
             # print this if there are biomes created but they are all full
             print("Uh-oh! It looks like all of the biomes are full! Please go create a new Habitat for this animal to live in.")
