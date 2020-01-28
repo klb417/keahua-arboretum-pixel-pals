@@ -1,3 +1,11 @@
+# INDEX.PY
+#
+# This module is responsible for running the application. This module is
+# specifically responsible for establishing the initial view and menu for
+# the user.
+#
+# Author(s): Ken Boyd, Cassie Boyd, Lauren Riddle, James Chapman, Ryan Crowley
+
 import os
 from uuid import uuid1
 
@@ -9,6 +17,7 @@ from actions import (
     build_facility_report,
     cultivate_plant,
     feed_animal,
+    create_animal_one_habitat
 )
 from plants import (
     Plant,
