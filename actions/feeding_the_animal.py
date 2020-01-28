@@ -51,4 +51,9 @@ def feeding_the_animal(animal):
             except:
                 #this part is repeated so that if they keep selecting bad numbers or words that it will loop around
                 os.system('cls' if os.name == 'nt' else 'clear')
+                print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
+                print("pick a number on the list...")
+                input("Press any button to continue.")
                 feeding_the_animal(animal)
