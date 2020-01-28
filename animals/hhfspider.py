@@ -1,3 +1,5 @@
+# Authors: Lauren and James
+# defines a class for creating the HHFSpider
 from animals import Animal
 from interfaces import IWalking
 from interfaces import Identifiable
