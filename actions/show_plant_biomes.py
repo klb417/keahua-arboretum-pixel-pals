@@ -1,3 +1,12 @@
+# SHOW_PLANT_BIOMES.PY
+#
+# This module is responsible for displaying a list of biomes a given plant
+# can be cultivated in. The menu displayed to the user allows the user to 
+# cultivate a given plant in a valid biome. This module is called by the
+# cultivate_plant module.
+#
+# Author(s): Ryan Crowley, James Chapman
+
 import os
 
 

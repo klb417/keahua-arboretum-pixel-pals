@@ -1,3 +1,11 @@
+# __init__.py for ACTIONS
+#
+# This package is responsible for importing classes within the Actions directory
+# to improve ease of use and understanding when importing this throughout the
+# codebase.
+#
+# Author(s): Ken Boyd, Cassie Boyd, Lauren Riddle, James Chapman, Ryan Crowley
+
 from .annex import annex_biome
 from .release_animal import release_animal
 from .report import build_facility_report
