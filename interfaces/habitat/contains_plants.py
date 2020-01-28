@@ -23,5 +23,5 @@ class IContainsPlants:
         if plant.species not in self.plants.keys():
             self.plants.update({f"{plant.species}": [plant]})
         else:
-            self.plants[f"{plant.species}"].append(plant)
+            self.plants[plant.species].append(plant)
         self.__current_plants += 1
