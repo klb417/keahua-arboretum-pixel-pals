@@ -2,6 +2,7 @@
 # Purpose: Holds the logic that creates a new animal and adds it to a biome
 from animals import RiverDolphin, nenegoose, Ulae, Kikakapu, Pueo, Opeapea, HHFSpider, GDDGecko
 import os
+from .create_animal import create_animal_two_habitats
 def release_animal(arboretum):
     animal = None
     # clears the screen
@@ -32,72 +33,7 @@ Type M to return to the main menu.
 
     if choice == "1":
         animal = RiverDolphin()
-        # clear the terminal
-        os.system("cls" if os.name == "nt" else "clear")
-        if arboretum.rivers == [] and arboretum.coastlines == []:
-            # clear the screen and print an error
-            os.system("cls" if os.name == "nt" else "clear")
-            # Printing the header
-            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
- |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
- +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
-            print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
-            input("\n\nPress enter to continue...")
-
-        else: 
-
-            # combine the rivers and coastline lists
-            new_list = []
-            for river in arboretum.rivers:
-                # add the river to the list if it has less than 12 animals in it
-                if river.is_animals_full() == False:
-                    new_list.append(river)
-            for coast in arboretum.coastlines:
-                # add the coastline to the list if it has less than 15 animals in it
-                if coast.is_animals_full() == False:
-                    new_list.append(coast)
-
-            if new_list != []:
-            # loop over list and display in terminal
-                # Printing the header
-                print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
- |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
- +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
-                for index, place in enumerate(new_list):
-                    print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
-                print("\nRelease the animal into which habitat?\n")
-                choice1 = input('''Type M to return to the main menu.
-                 
-> ''')
-                if choice1.lower() == "m":
-                    return
-                try:
-                    selection = new_list[int(choice1) - 1].id
-                    # search the river list for the selection
-                    river = list(filter(lambda x: x.id == selection, arboretum.rivers))
-                    # search the coast list for the selection
-                    coast = list(filter(lambda x: x.id == selection, arboretum.coastlines))
-                    if river != []:
-                        # add the animal to the river that was found in the search
-                        river[0].add_animal(animal)
-                    elif coast != []: 
-                        # add the animal to the river that was found in the search
-                        coast[0].add_animal(animal)
-                        # clear screen and print success message
-                    os.system("cls" if os.name == "nt" else "clear")
-                    # Printing the header
-                    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
- |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
- +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
-                    print(F'Success! The {animal.species} has been added to the biome!')
-                    input("\n\nPress enter to continue...")
-                except: 
-                    # re-load the release animal function if the user enters a choice that is not on the list
-                    release_animal(arboretum)
-            else:
-                # print this if there are biomes created but they are all full
-                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Habitat for this animal to live in.")
-                input("\n\nPress enter to continue...")
+        create_animal_two_habitats(arboretum.rivers, arboretum.coastlines, arboretum, animal)
 
             
 
