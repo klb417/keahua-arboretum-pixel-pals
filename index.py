@@ -1,3 +1,11 @@
+# INDEX.PY
+#
+# This module is responsible for running the application. This module is
+# specifically responsible for establishing the initial view and menu for
+# the user.
+#
+# Author(s): Ken Boyd, Cassie Boyd, Lauren Riddle, James Chapman, Ryan Crowley
+
 import os
 from uuid import uuid1
 

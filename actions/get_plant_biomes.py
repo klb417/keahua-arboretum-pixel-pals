@@ -1,3 +1,11 @@
+# GET_PLANT_BIOMES.PY
+#
+# This module is responsible for returning a list of biome objects that
+# are suitable for a given plant to be cultivated in. This module is called
+# by the cultivate_plant module.
+#
+# Author(s): Ryan Crowley, James Chapman
+
 # Function for returning list of biomes a selected plant can be added to
 def get_plant_biomes(plant, arboretum):
     '''Function that returns a list of biomes in an arboretum that
