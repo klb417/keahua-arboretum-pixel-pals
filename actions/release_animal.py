@@ -151,54 +151,7 @@ Type M to return to the main menu.
     if choice == "4":
         os.system("cls" if os.name == "nt" else "clear")
         animal = Kikakapu()
-        if arboretum.rivers == [] and arboretum.swamps == []:
-            os.system("cls" if os.name == "nt" else "clear")
-            # Printing the header
-            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
- |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
- +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
-            print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
-            input("\n\nPress enter to continue...")
-
-        else: 
-            Kikakapu_habitats = list()
-            for river in arboretum.rivers:
-                if river.is_animals_full() == False:
-                    Kikakapu_habitats.append(river)
-            for swamp in arboretum.swamps:
-                if swamp.is_animals_full() == False:
-                    Kikakapu_habitats.append(swamp)
-            if Kikakapu_habitats != []:
-                # Printing the header
-                print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
- |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
- +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
-                for index, place in enumerate(Kikakapu_habitats):
-                    print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
-                print("\nRelease the animal into which habitat?\n")
-                choice4 = input("Type M to return to the main menu. > ")
-                try: 
-                    selection = Kikakapu_habitats[int(choice4) - 1].id
-                    swamp = list(filter(lambda x: x.id == selection, arboretum.swamps))
-                    river = list(filter(lambda x: x.id == selection, arboretum.rivers))
-
-                    if river != []:
-                        river[0].add_animal(animal)
-                    if swamp != []: 
-                        swamp[0].add_animal(animal)
-                    os.system("cls" if os.name == "nt" else "clear")
-                    # Printing the header
-                    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
- |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
- +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
-                    print(F'Success! The {animal.species} has been added to the biome!')
-                    input("\n\nPress enter to continue...")
-                except: 
-                    release_animal(arboretum)
-            else: 
-                # print this if there are biomes created but they are all full
-                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Habitat for this animal to live in.")
-                input("\n\nPress enter to continue...")
+        create_animal_two_habitats(arboretum.rivers, arboretum.swamps, arboretum, animal)
 
 
     if choice == "5":
