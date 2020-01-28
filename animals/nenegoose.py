@@ -1,3 +1,5 @@
+# Authors: Lauren and James
+# defines a class for creating the nenegoose
 from animals import Animal
 from interfaces import IFlying
 from interfaces import Identifiable

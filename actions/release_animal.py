@@ -1,5 +1,5 @@
 # Author: Lauren Riddle
-# Purpose: Holds the logic that creates a new animal and adds it to a biome
+# Purpose: Holds the choices that call the create a new animal function
 from animals import RiverDolphin, nenegoose, Ulae, Kikakapu, Pueo, Opeapea, HHFSpider, GDDGecko
 import os
 from .create_animal import create_animal_two_habitats, create_animal_one_habitat

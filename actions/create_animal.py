@@ -1,3 +1,5 @@
+# Author: Lauren Riddle
+# Purpose: Holds the logic that creates a new animal and adds it to a biome
 from animals import RiverDolphin, nenegoose, Ulae, Kikakapu, Pueo, Opeapea, HHFSpider, GDDGecko
 import os
 from actions import release_animal

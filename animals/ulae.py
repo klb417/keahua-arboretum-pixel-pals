@@ -1,3 +1,5 @@
+# Authors: Lauren and James
+# defines a class for creating the Ulae
 from animals import Animal
 from interfaces import ISaltwater
 from interfaces import Identifiable
