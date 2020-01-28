@@ -1,3 +1,14 @@
+# ICONTAINSANIMALS.PY
+#
+# This file is an interface for biomes containing
+# animals. It keeps a count of current animals, a
+# max amount allowed, a check to see if it's full,
+# and a function to add a new animal to the
+# animals dictionary
+#
+# Author(s): Ken Boyd
+
+
 class IContainsAnimals:
     def __init__(self, maximum_animals=0):
         self.__animals = dict()
