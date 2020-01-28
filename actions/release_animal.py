@@ -157,54 +157,55 @@ Type M to return to the main menu.
     if choice == "5":
         os.system("cls" if os.name == "nt" else "clear")
         animal = Pueo()
-        if arboretum.grasslands == [] and arboretum.forests == []:
-            os.system("cls" if os.name == "nt" else "clear")
-            # Printing the header
-            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
- |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
- +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
-            print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
-            input("\n\nPress enter to continue...")
+        create_animal_two_habitats(arboretum.grasslands, arboretum.forests, arboretum, animal)
+#         if arboretum.grasslands == [] and arboretum.forests == []:
+#             os.system("cls" if os.name == "nt" else "clear")
+#             # Printing the header
+#             print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+#  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+#  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
+#             print("Uh Oh! There are no biomes for this animal to live in. Please go create a biome for this animal.")
+#             input("\n\nPress enter to continue...")
 
-        else: 
-            pueo_habitats = list()
-            for land in arboretum.grasslands:
-                if land.is_animals_full() == False:
-                    pueo_habitats.append(land)
-            for forest in arboretum.forests:
-                if forest.is_animals_full() == False:
-                    pueo_habitats.append(forest)
-            if pueo_habitats != []:
-                # Printing the header
-                print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
- |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
- +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
-                for index, place in enumerate(pueo_habitats):
-                    print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
-                print("\nRelease the animal into which habitat?\n")
-                choice5 = input("Type M to return to the main menu. > ")
-                try: 
-                    selection = pueo_habitats[int(choice5) - 1].id
-                    forest = list(filter(lambda x: x.id == selection, arboretum.forests))
-                    grassland = list(filter(lambda x: x.id == selection, arboretum.grasslands))
+#         else: 
+#             pueo_habitats = list()
+#             for land in arboretum.grasslands:
+#                 if land.is_animals_full() == False:
+#                     pueo_habitats.append(land)
+#             for forest in arboretum.forests:
+#                 if forest.is_animals_full() == False:
+#                     pueo_habitats.append(forest)
+#             if pueo_habitats != []:
+#                 # Printing the header
+#                 print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+#  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+#  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
+#                 for index, place in enumerate(pueo_habitats):
+#                     print(f'{index + 1}. {place.name} ({place.current_animals} animals)')
+#                 print("\nRelease the animal into which habitat?\n")
+#                 choice5 = input("Type M to return to the main menu. > ")
+#                 try: 
+#                     selection = pueo_habitats[int(choice5) - 1].id
+#                     forest = list(filter(lambda x: x.id == selection, arboretum.forests))
+#                     grassland = list(filter(lambda x: x.id == selection, arboretum.grasslands))
 
-                    if grassland != []:
-                        grassland[0].add_animal(animal)
-                    if forest != []: 
-                        forest[0].add_animal(animal)
-                    os.system("cls" if os.name == "nt" else "clear")
-                    # Printing the header
-                    print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
- |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
- +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
-                    print(F'Success! The {animal.species} has been added to the biome!')
-                    input("\n\nPress enter to continue...")
-                except: 
-                    release_animal(arboretum)
-            else: 
-                # print this if there are biomes created but they are all full
-                print("Uh-oh! It looks like all of the biomes are full! Please go create a new Habitat for this animal to live in.")
-                input("\n\nPress enter to continue...")
+#                     if grassland != []:
+#                         grassland[0].add_animal(animal)
+#                     if forest != []: 
+#                         forest[0].add_animal(animal)
+#                     os.system("cls" if os.name == "nt" else "clear")
+#                     # Printing the header
+#                     print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+#  |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+#  +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
+#                     print(F'Success! The {animal.species} has been added to the biome!')
+#                     input("\n\nPress enter to continue...")
+#                 except: 
+#                     release_animal(arboretum)
+#             else: 
+#                 # print this if there are biomes created but they are all full
+#                 print("Uh-oh! It looks like all of the biomes are full! Please go create a new Habitat for this animal to live in.")
+#                 input("\n\nPress enter to continue...")
 
 
     if choice == "6":
