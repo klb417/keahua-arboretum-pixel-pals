@@ -33,6 +33,10 @@ def feeding_the_animal(animal):
             print("pick a number on the list...")
             input("Press any button to continue.")
 
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
+ |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
+ +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+\n''')
             for index, prey in enumerate(thePrey):
                 print(f"{index + 1}. {prey}")
             print(f"\nWhat is on the menu for the {thisAnimal.species} today?\n")
