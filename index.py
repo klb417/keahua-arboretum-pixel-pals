@@ -33,7 +33,7 @@ from animals import (
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
 
-# os.system("say Welcome to Arboretum!" if os.name != "nt" else "cls")
+os.system("say Welcome to Arboretum! Nay Nay Gooses get in free. Crunch berries are five dollars per berry." if os.name != "nt" else "cls")
 
 def build_menu():
     os.system("cls" if os.name == "nt" else "clear")
