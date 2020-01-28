@@ -20,12 +20,9 @@ def feeding_the_animal(animal):
 
         if choice.lower() == "m":
             return
-        # print(choice, index, gddgprey)
         # a try and except is deployed to catch any errors when selecting a choice.
         try:
             # assuming the user selects a valid number the program excutes the feed method for the animal. Since we added 1 to the index we need to make sure to take it away again.
-            # print(gddgprey[int(choice) - 1])
-            # print(type(gddgprey[int(choice) - 1]))
             animal.feed(thePrey[int(choice) - 1])
         except:
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -46,11 +43,9 @@ def feeding_the_animal(animal):
                 return
        
             try:
-                # assuming the user selects a valid number the program excutes the feed method for the animal. Since we added 1 to the index we need to make sure to take it away again.
-                # print(gddgprey[int(choice) - 1])
-                # print(type(gddgprey[int(choice) - 1]))
                 animal.feed(thePrey[int(choice) - 1])
             except:
+                #this part is repeated so that if they keep selecting bad numbers or words that it will loop around
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print( ''' +-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+
     |  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |
